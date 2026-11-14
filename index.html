@@ -1,0 +1,600 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>راهنمای مشاوره وام قسطا</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: one calm reading column beside a sticky table of contents; videos carry their transcript at their side. */
+:root {
+  --bg: #f6f8fc; --surface: #ffffff; --surface-2: #eef3fb; --line: #dbe3f0;
+  --ink: #16233b; --ink-2: #4a5a75; --ink-3: #74829b;
+  --accent: #1f5fe0; --accent-soft: #e4edff; --note: #7a4a00; --note-soft: #fff4dc;
+  --font: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f1522; --surface: #172033; --surface-2: #1e2a42; --line: #2b3a57;
+  --ink: #e9eefa; --ink-2: #b4c0d8; --ink-3: #8593ad;
+  --accent: #7ea6ff; --accent-soft: #1d2f55; --note: #ffd58a; --note-soft: #33290f; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0f1522; --surface: #172033; --surface-2: #1e2a42; --line: #2b3a57;
+  --ink: #e9eefa; --ink-2: #b4c0d8; --ink-3: #8593ad;
+  --accent: #7ea6ff; --accent-soft: #1d2f55; --note: #ffd58a; --note-soft: #33290f; color-scheme: dark }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 2; direction: rtl; }
+a { color: var(--accent); }
+h1, h2, h3, h4 { text-wrap: balance; line-height: 1.6; margin: 0; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 28px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.hero { display: flex; flex-direction: column; gap: 14px; padding-block: 26px 30px; border-bottom: 1px solid var(--line); }
+.hero h1 { font-size: clamp(28px, 4.4vw, 42px); font-weight: 800; }
+.hero p { max-width: 62ch; color: var(--ink-2); font-size: 17px; }
+.hero__facts { display: flex; flex-wrap: wrap; gap: 8px 10px; margin: 6px 0 0; padding: 0; list-style: none; }
+.hero__facts li { padding: 2px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink-2); font-size: 14px; }
+.sample { display: flex; gap: 10px; align-items: flex-start; max-width: 70ch; padding: 10px 16px; border-radius: var(--radius); background: var(--note-soft); color: var(--note); font-size: 14.5px; }
+
+.layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 44px; align-items: start; padding-top: 28px; }
+.toc { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); max-height: calc(100vh - 32px); overflow: auto; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); font-size: 14.5px; line-height: 1.9; }
+.toc h2 { margin-bottom: 6px; color: var(--ink-3); font-size: 13px; font-weight: 500; }
+.toc ul { margin: 0; padding: 0; list-style: none; }
+.toc > ul > li { padding-block: 6px; border-top: 1px solid var(--line); }
+.toc > ul > li:first-child { border-top: 0; }
+.toc > ul > li > a { color: var(--ink); font-weight: 700; text-decoration: none; }
+.toc ul ul a { display: block; padding-inline-start: 12px; border-inline-start: 2px solid transparent; color: var(--ink-2); text-decoration: none; }
+.toc a:hover, .toc a.is-here { color: var(--accent); }
+.toc ul ul a.is-here { border-inline-start-color: var(--accent); }
+.main { display: flex; flex-direction: column; gap: 56px; min-width: 0; }
+
+.part { display: flex; flex-direction: column; gap: 40px; min-width: 0; scroll-margin-top: 16px; }
+.part__head { display: flex; flex-direction: column; gap: 2px; padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
+.eyebrow { color: var(--accent); font-size: 14px; font-weight: 700; }
+.part__head h2 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; }
+.part__head p:last-child { color: var(--ink-2); }
+
+.sec { display: flex; flex-direction: column; gap: 16px; min-width: 0; scroll-margin-top: 16px; }
+.sec h3 { font-size: 22px; font-weight: 700; }
+.lead { max-width: 68ch; color: var(--ink-2); font-size: 17px; }
+.steps-title, .notes h4, .tbl h4 { font-size: 15px; font-weight: 700; }
+.steps { display: flex; flex-direction: column; gap: 6px; max-width: 70ch; margin: 0; padding: 0; list-style: none; counter-reset: step; }
+.steps li { position: relative; padding-inline-start: 40px; counter-increment: step; }
+.steps li::before { content: counter(step, persian); position: absolute; inset-inline-start: 0; top: 4px; width: 26px; height: 26px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: 13.5px; font-weight: 700; line-height: 26px; text-align: center; }
+.notes { max-width: 70ch; padding: 12px 18px; border-radius: var(--radius); background: var(--surface-2); }
+.notes ul { margin: 4px 0 0; padding-inline-start: 20px; color: var(--ink-2); font-size: 15px; }
+
+.tbl { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.tbl__scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 15px; line-height: 1.8; }
+th, td { padding: 9px 14px; border-bottom: 1px solid var(--line); text-align: start; vertical-align: top; }
+th { background: var(--surface-2); font-weight: 700; }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 700; white-space: nowrap; }
+
+/* a recording with its subtitle over the picture and its transcript beside it */
+.vid { display: grid; gap: 18px; margin: 4px 0; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.vid--wide { grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); }
+.vid--phone { grid-template-columns: minmax(0, 300px) minmax(0, 1fr); }
+.vid__frame { position: relative; min-width: 0; align-self: start; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #000; }
+.vid video { display: block; width: 100%; height: auto; max-width: 100%; }
+.vid__sub { position: absolute; inset-inline: 10px; bottom: 46px; margin: 0; padding: 6px 12px; border-radius: 8px; background: rgba(8, 14, 28, .84); color: #fff; font-size: 14.5px; line-height: 1.9; text-align: center; pointer-events: none; }
+.vid--phone .vid__sub { font-size: 13px; }
+.vid__side { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.vid__meta { display: flex; align-items: center; gap: 8px; color: var(--ink); font-size: 14.5px; font-weight: 700; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.vid__hint { color: var(--ink-3); font-size: 13px; }
+.vid__lines { display: flex; flex-direction: column; gap: 2px; max-height: 420px; margin: 4px 0 0; padding: 0; overflow: auto; list-style: none; }
+.vid__lines button { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 8px; width: 100%; padding: 6px 8px; border: 0; border-radius: 8px; background: transparent; font-size: 14px; line-height: 1.85; text-align: start; cursor: pointer; }
+.vid__lines button:hover { background: var(--surface-2); }
+.vid__lines .t { color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.vid__lines .is-now button { background: var(--accent-soft); color: var(--accent); font-weight: 500; }
+.vid__lines .is-now .t { color: var(--accent); }
+
+.shots { display: grid; gap: 14px; }
+.shots--wide { grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); }
+.shots--phone { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.shot { display: flex; flex-direction: column; gap: 6px; min-width: 0; margin: 0; }
+.shot__open { display: block; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); cursor: zoom-in; }
+.shots--wide .shot__open { aspect-ratio: 16 / 10; }
+.shots--phone .shot__open { aspect-ratio: 9 / 16; }
+.shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.shot figcaption { color: var(--ink-2); font-size: 13.5px; line-height: 1.7; }
+
+.menu { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 260px); gap: 24px; align-items: start; }
+.menu ul { margin: 0; padding-inline-start: 20px; }
+.glossary { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 12px; margin: 0; }
+.glossary div { padding: 12px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.glossary dt { font-weight: 700; }
+.glossary dd { margin: 0; color: var(--ink-2); font-size: 15px; }
+
+dialog.zoom { width: min(96vw, 1200px); max-height: 94vh; padding: 0; border: 0; border-radius: 14px; background: var(--surface); color: var(--ink); }
+dialog.zoom::backdrop { background: rgba(6, 10, 20, .78); }
+.zoom__bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 16px; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+.zoom__bar button { padding: 2px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-2); cursor: pointer; }
+.zoom__body { max-height: calc(94vh - 56px); overflow: auto; text-align: center; background: var(--surface-2); }
+.zoom__body img { max-width: 100%; height: auto; }
+
+@media (max-width: 980px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .toc { position: static; max-height: none; }
+  .toc ul ul { display: none; }
+  .toc > ul { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  .toc > ul > li { padding: 0; border: 0; }
+  .vid--wide, .vid--phone, .menu { grid-template-columns: minmax(0, 1fr); }
+  .vid--phone .vid__frame { max-width: 300px; margin-inline: auto; }
+  .vid__lines { max-height: 260px; }
+}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <h1>راهنمای مشاوره‌ی وام قسطا</h1>
+    <p>این راهنما دو چیز را نشان می‌دهد: مشتری در صفحه‌های مشاوره‌ی وام چه می‌بیند، و شما در پنل ادمین چطور وام‌ها، سؤال‌ها، قیمت‌ها و بقیه‌ی تنظیم‌ها را مدیریت می‌کنید. هر بخش یک ویدئوی کوتاه با زیرنویس، توضیح قدم‌به‌قدم و تصویر صفحه دارد.</p>
+    <ul class="hero__facts"><li>۱۹ ویدئوی آموزشی با زیرنویس</li><li>۶۳ تصویر از صفحه‌ها</li><li>بدون اصطلاح فنی</li></ul>
+    <p class="sample"><span aria-hidden="true">●</span><span>همه‌ی نام‌ها، مبلغ‌ها و گزارش‌هایی که در تصویرها و ویدئوها می‌بینید <strong>نمونه و ساختگی</strong> هستند. هیچ اطلاعات واقعیِ مشتری در این راهنما نیست.</span></p>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="فهرست راهنما"><h2>فهرست</h2><ul><li><a href="#part-user"><span>مسیر کاربر</span></a><ul><li><a href="#user-start">شروع مشاوره و پاسخ به سؤال‌ها</a></li><li><a href="#user-pay">بررسی و پرداخت</a></li><li><a href="#user-identity">کد ملی، کد تأیید و انتظار برای گزارش</a></li><li><a href="#user-report">گزارش مشاوره و صفحه‌ی هر وام</a></li><li><a href="#user-list">لیست گزارش‌ها و تغییر پاسخ‌ها</a></li></ul></li><li><a href="#part-catalog"><span>کاتالوگ وام‌ها</span></a><ul><li><a href="#cat-list">فهرست وام‌ها</a></li><li><a href="#cat-editor">ویرایش یک وام</a></li><li><a href="#cat-mappings">نگاشت عنوان شرط‌ها</a></li><li><a href="#cat-reports">گزارش‌های کاربران</a></li><li><a href="#cat-review">صف بازبینی</a></li></ul></li><li><a href="#part-questions"><span>مجموعه‌سؤال‌ها</span></a><ul><li><a href="#qs-list">فهرست مجموعه‌سؤال‌ها</a></li><li><a href="#qs-editor">ویرایش سؤال‌ها و گزینه‌ها</a></li><li><a href="#qs-rules">قاعده‌ی نمایش و پیش‌نمایش</a></li><li><a href="#qs-publish">انتشار و کپی</a></li></ul></li><li><a href="#part-experiment"><span>آزمایش‌ها</span></a><ul><li><a href="#exp">آزمایش مشاوره‌ی وام</a></li></ul></li><li><a href="#part-prompts"><span>نسخه‌های پرامپت</span></a><ul><li><a href="#pr-list">نسخه‌های پرامپت</a></li><li><a href="#pr-test">امتحان یک نسخه پیش از فعال کردن</a></li></ul></li><li><a href="#part-ai"><span>هوش مصنوعی</span></a><ul><li><a href="#ai-settings">سرویس‌ها و مدل‌های هوش مصنوعی</a></li></ul></li><li><a href="#part-inquiry"><span>گزارش یک کاربر</span></a><ul><li><a href="#inq">دیدن گزارش یک کاربر</a></li></ul></li><li><a href="#part-settings"><span>تنظیمات</span></a><ul><li><a href="#settings">تنظیمات مشاوره‌ی وام</a></li></ul></li><li><a href="#glossary"><span>واژه‌نامه</span></a></li></ul></nav>
+    <main class="main">
+      <div class="part" id="where">
+  <header class="part__head"><p class="eyebrow">پیش از شروع</p><h2>هر چیز کجاست؟</h2><p>صفحه‌های مشاوره‌ی وام در پنل ادمین.</p></header>
+  <div class="menu">
+    <div class="tbl"><div class="tbl__scroll"><table>
+      <thead><tr><th>کاری که می‌خواهید بکنید</th><th>کجا</th></tr></thead>
+      <tbody>
+        <tr><td>دیدن و اصلاح وام‌ها</td><td>منوی «مشاوره وام» ← «کاتالوگ وام‌ها»</td></tr>
+        <tr><td>رسیدگی به گزارش کاربران از وام‌ها</td><td>«کاتالوگ وام‌ها» ← تب «گزارش‌های کاربران»</td></tr>
+        <tr><td>تأیید تغییرهای خودکار وام‌ها</td><td>«کاتالوگ وام‌ها» ← تب «صف بازبینی»</td></tr>
+        <tr><td>عوض کردن سؤال‌ها</td><td>منوی «مشاوره وام» ← «مجموعه‌سؤال‌ها»</td></tr>
+        <tr><td>عوض کردن متن مشاوره‌ی هوش مصنوعی</td><td>منوی «مشاوره وام» ← «نسخه‌های پرامپت»</td></tr>
+        <tr><td>امتحان قیمت و پکیج</td><td>منوی «مارکتینگ» ← «آزمایش‌ها»</td></tr>
+        <tr><td>انتخاب مدل هوش مصنوعی</td><td>منوی «تنظیمات» ← «هوش مصنوعی»</td></tr>
+        <tr><td>دیدن گزارش یک کاربر</td><td>صفحه‌ی «استعلام‌ها» ← «نتیجه مشاوره»</td></tr>
+        <tr><td>باز و بسته کردن سرویس، پیامک‌ها، اعتبار گزارش</td><td>«تنظیمات سراسری قسطا» ← زبانه‌ی «مشاوره‌ی وام»</td></tr>
+      </tbody></table></div></div>
+    <figure class="shot"><button type="button" class="shot__open" data-full="shots/a-menu.jpg" data-caption="گروه «مشاوره وام» در منوی کناری"><img loading="lazy" src="shots/a-menu.jpg" alt="گروه «مشاوره وام» در منوی کناری"></button><figcaption>گروه «مشاوره وام» در منوی کناری</figcaption></figure>
+  </div>
+</div>
+      <div class="part" id="part-user"><header class="part__head"><p class="eyebrow">بخش اول</p><h2>مسیر کاربر</h2><p>آن‌چه مشتری از لحظه‌ی شروع تا دیدن گزارش می‌بیند.</p></header><section class="sec" id="user-start">
+  <h3>شروع مشاوره و پاسخ به سؤال‌ها</h3>
+  <p class="lead">کاربر بعد از ورود به حساب، به صفحه‌ی مشاوره‌ی وام می‌رود. چند سؤال کوتاه می‌پرسیم تا وام‌های مناسب او را پیدا کنیم.</p>
+  <figure class="vid vid--phone" data-take="u1-questions">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/u1-questions.jpg" src="media/u1-questions.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۱:۰۰ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.64"><span class="t">۰:۰۰</span><span>صفحه‌ی شروع مشاوره‌ی وام. با «شروع مشاوره وام» وارد سؤال‌ها می‌شوید.</span></button></li><li><button type="button" data-at="5.28"><span class="t">۰:۰۵</span><span>سؤال اول: مبلغ وام. با دکمه‌های کم و زیاد یا کشیدن نوار، بازه‌ی مبلغ را انتخاب کنید.</span></button></li><li><button type="button" data-at="13.48"><span class="t">۰:۱۳</span><span>در سؤال‌های تک‌انتخابی، با انتخاب یک گزینه خودکار به سؤال بعد می‌روید.</span></button></li><li><button type="button" data-at="18.53"><span class="t">۰:۱۸</span><span>توان پرداخت قسط ماهانه را مشخص کنید و «ادامه» را بزنید.</span></button></li><li><button type="button" data-at="21.81"><span class="t">۰:۲۱</span><span>در سؤال‌های چندانتخابی می‌توانید چند گزینه را با هم انتخاب کنید. بعضی گزینه‌ها یک سؤال کوچک زیر خود باز می‌کنند.</span></button></li><li><button type="button" data-at="30.64"><span class="t">۰:۳۰</span><span>اولویت خودتان را انتخاب کنید: سرعت، سود کمتر یا مراجعه‌ی کمتر.</span></button></li><li><button type="button" data-at="33.53"><span class="t">۰:۳۳</span><span>بانک‌هایی را که در آن‌ها حساب فعال دارید انتخاب کنید. می‌توانید نام بانک را جست‌وجو کنید.</span></button></li><li><button type="button" data-at="41.08"><span class="t">۰:۴۱</span><span>پیش از پرداخت، پاسخ‌هایتان را مرور کنید. با «ویرایش» هر پاسخ را می‌توانید عوض کنید.</span></button></li><li><button type="button" data-at="45.63"><span class="t">۰:۴۵</span><span>صفحه‌ی بررسی و پرداخت: قیمت سرویس، تخفیف و مبلغ قابل پرداخت را می‌بینید.</span></button></li><li><button type="button" data-at="47.87"><span class="t">۰:۴۷</span><span>اگر کد تخفیف دارید، آن را وارد و «ثبت کد» را بزنید.</span></button></li><li><button type="button" data-at="54.22"><span class="t">۰:۵۴</span><span>با «پرداخت و ادامه» به درگاه بانک می‌روید. بعد از پرداخت موفق، خودکار به ادامه‌ی مراحل برمی‌گردید.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>در صفحه‌ی شروع، سه ویژگی سرویس و یک خط آماری دیده می‌شود. با «شروع مشاوره وام» سؤال‌ها آغاز می‌شوند.</li><li>سؤال مبلغ و سؤال قسط ماهانه با نوار انتخاب می‌شوند: دکمه‌های + و − یا کشیدن نوار، بازه را عوض می‌کند.</li><li>در سؤال‌های تک‌انتخابی، با زدن روی یک گزینه خودکار به سؤال بعد می‌روید.</li><li>در سؤال‌های چندانتخابی چند گزینه را با هم انتخاب می‌کنید و بعد «ادامه» را می‌زنید. بعضی گزینه‌ها یک سؤال کوچک زیر خود باز می‌کنند، مثل «چند ضامن دارید؟».</li><li>در سؤال بانک‌ها می‌توانید نام بانک را جست‌وجو کنید.</li><li>نوار بالای صفحه نشان می‌دهد چه مقدار از سؤال‌ها را جواب داده‌اید. با فلش بالای صفحه به سؤال قبل برمی‌گردید.</li><li>در پایان، همه‌ی پاسخ‌ها یک‌جا نشان داده می‌شوند. با «ویرایش» کنار هر پاسخ می‌توانید آن را عوض کنید و بعد «تأیید و ادامه» را بزنید.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>اگر کاربر صفحه را ببندد و دوباره برگردد، از همان سؤالی که بود ادامه می‌دهد.</li></ul></aside>
+  <div class="shots shots--phone"><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-intro.jpg" data-caption="صفحه‌ی شروع"><img loading="lazy" src="shots/u-intro.jpg" alt="صفحه‌ی شروع"></button><figcaption>صفحه‌ی شروع</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-question-amount.jpg" data-caption="سؤال مبلغ با نوار انتخاب"><img loading="lazy" src="shots/u-question-amount.jpg" alt="سؤال مبلغ با نوار انتخاب"></button><figcaption>سؤال مبلغ با نوار انتخاب</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-question-single.jpg" data-caption="سؤال تک‌انتخابی"><img loading="lazy" src="shots/u-question-single.jpg" alt="سؤال تک‌انتخابی"></button><figcaption>سؤال تک‌انتخابی</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-question-multi.jpg" data-caption="سؤال چندانتخابی با سؤال زیرمجموعه"><img loading="lazy" src="shots/u-question-multi.jpg" alt="سؤال چندانتخابی با سؤال زیرمجموعه"></button><figcaption>سؤال چندانتخابی با سؤال زیرمجموعه</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-question-banks.jpg" data-caption="انتخاب بانک‌ها"><img loading="lazy" src="shots/u-question-banks.jpg" alt="انتخاب بانک‌ها"></button><figcaption>انتخاب بانک‌ها</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-review.jpg" data-caption="مرور پاسخ‌ها پیش از پرداخت"><img loading="lazy" src="shots/u-review.jpg" alt="مرور پاسخ‌ها پیش از پرداخت"></button><figcaption>مرور پاسخ‌ها پیش از پرداخت</figcaption></figure></div>
+</section><section class="sec" id="user-pay">
+  <h3>بررسی و پرداخت</h3>
+  <p class="lead">بعد از تأیید پاسخ‌ها، کاربر هزینه‌ی مشاوره را می‌بیند و پرداخت می‌کند. (این بخش در ویدئوی بالا، از دقیقه‌ی پایانی، دیده می‌شود.)</p>
+  
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>قیمت سرویس، تخفیف ویژه و «مبلغ قابل پرداخت» نمایش داده می‌شود.</li><li>اگر کاربر کد تخفیف دارد، ردیف «کد تخفیف دارید؟» را باز می‌کند، کد را می‌نویسد و «ثبت کد» را می‌زند. مبلغ همان لحظه به‌روز می‌شود.</li><li>با «پرداخت و ادامه» به درگاه بانک می‌رود. بعد از پرداخت موفق، خودکار به ادامه‌ی مراحل برمی‌گردد.</li><li>اگر پرداخت ناموفق باشد، می‌تواند دوباره تلاش کند. اگر مبلغی از حساب کم شده باشد، حداکثر تا ۷۲ ساعت برمی‌گردد.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>اگر برای کاربر چند پکیج (مثلاً برنزی، نقره‌ای، طلایی) تعریف شده باشد، در همین صفحه یکی را انتخاب می‌کند. این را در بخش «آزمایش‌ها» تنظیم می‌کنید.</li></ul></aside>
+  <div class="shots shots--phone"><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-payment.jpg" data-caption="بررسی و پرداخت"><img loading="lazy" src="shots/u-payment.jpg" alt="بررسی و پرداخت"></button><figcaption>بررسی و پرداخت</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-payment-discount.jpg" data-caption="بعد از ثبت کد تخفیف"><img loading="lazy" src="shots/u-payment-discount.jpg" alt="بعد از ثبت کد تخفیف"></button><figcaption>بعد از ثبت کد تخفیف</figcaption></figure></div>
+</section><section class="sec" id="user-identity">
+  <h3>کد ملی، کد تأیید و انتظار برای گزارش</h3>
+  <p class="lead">برای گرفتن گزارش اعتباری از سامانه‌ی رسمی اعتبارسنجی، کد ملی و یک کد تأیید پیامکی لازم است.</p>
+  <figure class="vid vid--phone" data-take="u2-identity">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/u2-identity.jpg" src="media/u2-identity.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۲۶ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.62"><span class="t">۰:۰۰</span><span>بعد از پرداخت، کد ملی خودتان را وارد کنید. گزارش اعتباری با همین کد ملی گرفته می‌شود.</span></button></li><li><button type="button" data-at="7.21"><span class="t">۰:۰۷</span><span>کد تأییدی که از سامانه‌ی اعتبارسنجی برایتان پیامک می‌شود را وارد کنید.</span></button></li><li><button type="button" data-at="10.72"><span class="t">۰:۱۰</span><span>حالا گزارش در حال آماده شدن است. سه مرحله‌ی بررسی و زمان تقریبی را می‌بینید. اگر صفحه را ببندید، نتیجه پیامک می‌شود.</span></button></li><li><button type="button" data-at="21.43"><span class="t">۰:۲۱</span><span>گزارش آماده شد و خودکار باز می‌شود.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>کاربر کد ملی خود را وارد می‌کند و «دریافت کد تأیید» را می‌زند.</li><li>کدی که سامانه‌ی اعتبارسنجی پیامک می‌کند را وارد می‌کند. تا ۳ دقیقه فرصت دارد و بعد می‌تواند کد تازه بخواهد.</li><li>صفحه‌ی انتظار سه مرحله را نشان می‌دهد: استعلام هویت، بررسی وضعیت اعتباری و آماده‌سازی گزارش. کل کار حدود ۵ دقیقه طول می‌کشد.</li><li>اگر کاربر صفحه را ببندد، مشکلی نیست: گزارش که آماده شد پیامک می‌گیرد و از «لیست گزارش» بازش می‌کند.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>اگر کد ملی کاربر از قبل ثبت و تأیید شده باشد، صفحه‌ی کد ملی نشان داده نمی‌شود.</li><li>اگر به هر دلیل گزارش ساخته نشود، مبلغ پرداختی به کیف پول کاربر برمی‌گردد و همین را در صفحه می‌بیند.</li></ul></aside>
+  <div class="shots shots--phone"><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-nid.jpg" data-caption="وارد کردن کد ملی"><img loading="lazy" src="shots/u-nid.jpg" alt="وارد کردن کد ملی"></button><figcaption>وارد کردن کد ملی</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-otp.jpg" data-caption="کد تأیید پیامکی"><img loading="lazy" src="shots/u-otp.jpg" alt="کد تأیید پیامکی"></button><figcaption>کد تأیید پیامکی</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-processing.jpg" data-caption="انتظار برای آماده شدن گزارش"><img loading="lazy" src="shots/u-processing.jpg" alt="انتظار برای آماده شدن گزارش"></button><figcaption>انتظار برای آماده شدن گزارش</figcaption></figure></div>
+</section><section class="sec" id="user-report">
+  <h3>گزارش مشاوره و صفحه‌ی هر وام</h3>
+  <p class="lead">این همان صفحه‌ای است که کاربر برایش پول داده است: چه مبلغی می‌تواند بگیرد، از کدام وام‌ها و با چه قدم‌هایی.</p>
+  <figure class="vid vid--phone" data-take="u3-report">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/u3-report.jpg" src="media/u3-report.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۴۷ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.65"><span class="t">۰:۰۰</span><span>بالای گزارش: مبلغی که می‌توانید بگیرید، جمع اقساط ماهانه، تعداد قدم‌ها، تعداد وام‌ها و رتبه‌ی اعتباری شما.</span></button></li><li><button type="button" data-at="3.74"><span class="t">۰:۰۳</span><span>با «جزئیات بیشتر» مبلغ درخواستی شما کنار مبلغ قابل دریافت و دلیل تفاوت آن‌ها نشان داده می‌شود.</span></button></li><li><button type="button" data-at="9.64"><span class="t">۰:۰۹</span><span>نقشه‌ی راه، قدم‌به‌قدم می‌گوید برای گرفتن وام چه کارهایی را به چه ترتیبی انجام دهید.</span></button></li><li><button type="button" data-at="12.29"><span class="t">۰:۱۲</span><span>با زدن روی رتبه‌ی اعتباری، جای رتبه‌ی شما روی مقیاس A تا E و معنی آن را می‌بینید.</span></button></li><li><button type="button" data-at="17.77"><span class="t">۰:۱۷</span><span>«وام این مسیر» وام‌های پیشنهادی را نشان می‌دهد، و «نکات مهم» توصیه‌هایی برای بهتر شدن شرایط شما.</span></button></li><li><button type="button" data-at="24.98"><span class="t">۰:۲۴</span><span>با «جزئیات» صفحه‌ی همان وام باز می‌شود.</span></button></li><li><button type="button" data-at="27.98"><span class="t">۰:۲۷</span><span>صفحه‌ی وام: چرا این وام پیشنهاد شده، مبلغ و قسط و نرخ و مدت، شرط‌ها و این‌که کدام را دارید، و مراحل گرفتن آن.</span></button></li><li><button type="button" data-at="30.71"><span class="t">۰:۳۰</span><span>اگر اطلاعات وام نادرست بود، با «ارسال گزارش» نوع مشکل را انتخاب کنید و بفرستید. تیم قسطا آن را بررسی می‌کند.</span></button></li><li><button type="button" data-at="42.27"><span class="t">۰:۴۲</span><span>با «ادامه در سایت بانک» مستقیم به صفحه‌ی همین وام در سایت بانک می‌روید.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>بالای گزارش: مبلغ قابل دریافت، جمع اقساط ماهانه، تعداد قدم‌ها، تعداد وام‌های پیشنهادی و رتبه‌ی اعتباری.</li><li>«جزئیات بیشتر» مبلغ درخواستی کاربر را کنار مبلغ قابل دریافت می‌گذارد و توضیح می‌دهد چرا این دو فرق دارند.</li><li>با زدن روی رتبه، جای آن روی مقیاس A تا E، تاریخ گزارش اعتباری و معنی رتبه نشان داده می‌شود.</li><li>«نقشه راه» کارهایی را که باید به ترتیب انجام شود می‌گوید. با «ادامه مراحل» همه‌ی قدم‌ها باز می‌شوند.</li><li>«وام این مسیر» وام‌های پیشنهادی و «نکات مهم» توصیه‌ها را نشان می‌دهد. با «جزئیات» صفحه‌ی همان وام باز می‌شود.</li><li>صفحه‌ی وام می‌گوید چرا این وام پیشنهاد شده، مبلغ و قسط و نرخ و مدت آن چیست، کدام شرط‌ها را کاربر دارد و کدام را باید فراهم کند، و مراحل گرفتنش چیست.</li><li>با «ادامه در سایت بانک» کاربر مستقیم به صفحه‌ی همان وام در سایت بانک می‌رود.</li><li>اگر اطلاعات وام اشتباه باشد، کاربر با «ارسال گزارش» نوع مشکل را انتخاب می‌کند و می‌فرستد. این گزارش در پنل ادمین، بخش «گزارش‌های کاربران» دیده می‌شود.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>اگر هیچ وامی با شرایط کاربر جور نشود، صفحه همین را می‌گوید، دلیل‌ها را توضیح می‌دهد و مبلغ پرداختی برمی‌گردد.</li><li>اگر کاربر پکیج ارزان‌تری خریده باشد، بعضی بخش‌ها با علامت قفل و پیشنهاد ارتقا نشان داده می‌شوند.</li></ul></aside>
+  <div class="shots shots--phone"><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-report.jpg" data-caption="بالای گزارش"><img loading="lazy" src="shots/u-report.jpg" alt="بالای گزارش"></button><figcaption>بالای گزارش</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-report-amount-sheet.jpg" data-caption="مبلغ درخواستی در برابر قابل دریافت"><img loading="lazy" src="shots/u-report-amount-sheet.jpg" alt="مبلغ درخواستی در برابر قابل دریافت"></button><figcaption>مبلغ درخواستی در برابر قابل دریافت</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-report-grade-sheet.jpg" data-caption="رتبه‌ی اعتباری و معنی آن"><img loading="lazy" src="shots/u-report-grade-sheet.jpg" alt="رتبه‌ی اعتباری و معنی آن"></button><figcaption>رتبه‌ی اعتباری و معنی آن</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-report-roadmap.jpg" data-caption="نقشه‌ی راه"><img loading="lazy" src="shots/u-report-roadmap.jpg" alt="نقشه‌ی راه"></button><figcaption>نقشه‌ی راه</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-report-loans.jpg" data-caption="وام‌های پیشنهادی"><img loading="lazy" src="shots/u-report-loans.jpg" alt="وام‌های پیشنهادی"></button><figcaption>وام‌های پیشنهادی</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-report-tips.jpg" data-caption="نکات مهم"><img loading="lazy" src="shots/u-report-tips.jpg" alt="نکات مهم"></button><figcaption>نکات مهم</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-loan.jpg" data-caption="صفحه‌ی یک وام"><img loading="lazy" src="shots/u-loan.jpg" alt="صفحه‌ی یک وام"></button><figcaption>صفحه‌ی یک وام</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-loan-bottom.jpg" data-caption="شرط‌ها و مراحل دریافت"><img loading="lazy" src="shots/u-loan-bottom.jpg" alt="شرط‌ها و مراحل دریافت"></button><figcaption>شرط‌ها و مراحل دریافت</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-loan-issue.jpg" data-caption="گزارش اطلاعات نادرست"><img loading="lazy" src="shots/u-loan-issue.jpg" alt="گزارش اطلاعات نادرست"></button><figcaption>گزارش اطلاعات نادرست</figcaption></figure></div>
+</section><section class="sec" id="user-list">
+  <h3>لیست گزارش‌ها و تغییر پاسخ‌ها</h3>
+  <p class="lead">کاربری که قبلاً مشاوره گرفته، به‌جای صفحه‌ی شروع، فهرست گزارش‌هایش را می‌بیند.</p>
+  <figure class="vid vid--phone" data-take="u4-list">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/u4-list.jpg" src="media/u4-list.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۲۲ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.62"><span class="t">۰:۰۰</span><span>اگر قبلاً مشاوره گرفته باشید، فهرست گزارش‌هایتان را می‌بینید: مبلغ درخواستی، اعتبار گزارش، رتبه و تعداد وام.</span></button></li><li><button type="button" data-at="3.87"><span class="t">۰:۰۳</span><span>گزارش فعال را می‌توانید باز کنید. گزارش منقضی دیگر باز نمی‌شود و باید مشاوره‌ی جدید بگیرید.</span></button></li><li><button type="button" data-at="11.28"><span class="t">۰:۱۱</span><span>در گزارش، با «تغییر پاسخ‌ها» می‌توانید جواب‌هایتان را عوض کنید و بدون پرداخت دوباره گزارش تازه بگیرید. تعداد دفعات باقی‌مانده نشان داده می‌شود.</span></button></li><li><button type="button" data-at="16.96"><span class="t">۰:۱۶</span><span>سؤال‌ها با جواب‌های قبلی شما باز می‌شوند؛ هر کدام را خواستید عوض کنید و ادامه دهید.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>هر کارت یک گزارش است: مبلغ درخواستی، اعتبار گزارش (چند روز مانده)، رتبه و تعداد وام.</li><li>گزارش «فعال» با «مشاهده گزارش» باز می‌شود. گزارش «منقضی» دیگر باز نمی‌شود.</li><li>کارت «پرداخت شده» یعنی پرداخت انجام شده ولی کد ملی هنوز وارد نشده؛ با «ادامه فرایند» کاربر همان‌جا ادامه می‌دهد و لازم نیست دوباره پرداخت کند.</li><li>با «مشاوره جدید وام» یک مشاوره‌ی تازه شروع می‌شود.</li><li>داخل گزارش، «تغییر پاسخ‌ها» سؤال‌ها را با جواب‌های قبلی باز می‌کند. کاربر بدون پرداخت دوباره، گزارش تازه می‌گیرد. تعداد دفعات باقی‌مانده کنار دکمه نوشته شده است.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>مدت اعتبار گزارش و تعداد دفعات مجاز تغییر پاسخ را در «تنظیمات» پنل ادمین تعیین می‌کنید.</li></ul></aside>
+  <div class="shots shots--phone"><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-list.jpg" data-caption="لیست گزارش‌ها"><img loading="lazy" src="shots/u-list.jpg" alt="لیست گزارش‌ها"></button><figcaption>لیست گزارش‌ها</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/u-reanswer.jpg" data-caption="تغییر پاسخ‌ها در گزارش"><img loading="lazy" src="shots/u-reanswer.jpg" alt="تغییر پاسخ‌ها در گزارش"></button><figcaption>تغییر پاسخ‌ها در گزارش</figcaption></figure></div>
+</section></div><div class="part" id="part-catalog"><header class="part__head"><p class="eyebrow">بخش دوم</p><h2>کاتالوگ وام‌ها</h2><p>جایی که وام‌ها، شرط‌ها و گزارش‌های کاربران را مدیریت می‌کنید.</p></header><section class="sec" id="cat-list">
+  <h3>فهرست وام‌ها</h3>
+  <p class="lead">کاتالوگ، فهرست همه‌ی وام‌هایی است که مشاوره‌ی وام از میان آن‌ها به کاربر پیشنهاد می‌دهد. مسیر: منوی «مشاوره وام» ← «کاتالوگ وام‌ها».</p>
+  <figure class="vid vid--wide" data-take="c1-loans">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/c1-loans.jpg" src="media/c1-loans.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۲۵ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.62"><span class="t">۰:۰۰</span><span>کاتالوگ وام‌ها: فهرست همه‌ی وام‌هایی که مشاوره‌ی وام از میان آن‌ها پیشنهاد می‌دهد.</span></button></li><li><button type="button" data-at="3.7"><span class="t">۰:۰۳</span><span>کنار هر وام می‌بینید که «قابل پیشنهاد» است یا به چه دلیل به کاربران پیشنهاد نمی‌شود.</span></button></li><li><button type="button" data-at="7.08"><span class="t">۰:۰۷</span><span>با این دکمه‌ها فهرست را فیلتر کنید: همه، قابل پیشنهاد، پنهان، یا هر دلیلِ پنهان بودن. عدد کنار هر دلیل تعداد وام‌های آن است.</span></button></li><li><button type="button" data-at="15.62"><span class="t">۰:۱۵</span><span>با جست‌وجوی عنوان یا انتخاب بانک، وام مورد نظر را سریع پیدا کنید.</span></button></li><li><button type="button" data-at="19.03"><span class="t">۰:۱۹</span><span>با «ویرایش» صفحه‌ی همان وام باز می‌شود.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>هر ردیف یک وام است: عنوان، بانک، نوع، نرخ، سقف مبلغ و تعداد پلن‌ها.</li><li>برچسب سبز «قابل پیشنهاد» یعنی این وام می‌تواند در گزارش کاربران بیاید. برچسب‌های دیگر دلیل پیشنهاد نشدن را می‌گویند.</li><li>با ردیف دکمه‌های بالای فهرست، وام‌ها را فیلتر کنید: همه، قابل پیشنهاد، پنهان، یا هر دلیل جداگانه. عدد کنار هر دلیل تعداد وام‌های آن است.</li><li>با نوشتن بخشی از عنوان یا انتخاب بانک، وام را سریع پیدا کنید.</li><li>«ویرایش» صفحه‌ی همان وام را باز می‌کند.</li></ol>
+  <div class="tbl"><h4>چرا یک وام پیشنهاد نمی‌شود؟</h4><div class="tbl__scroll"><table><thead><tr><th>برچسب</th><th>یعنی چه</th><th>چطور درست می‌شود</th></tr></thead><tbody><tr><td>منتظر پلن نرخ ثابت</td><td>برای این وام به‌جای یک نرخ، بازه‌ی نرخ ثبت شده است.</td><td>در صفحه‌ی ویرایش، پلن با نرخ مشخص تعریف کنید.</td></tr><tr><td>معرفی‌نامه بدون گروه</td><td>وام معرفی‌نامه می‌خواهد ولی معلوم نیست برای کدام گروه از کاربران است.</td><td>در بخش «شرایط احراز» گروه را انتخاب کنید.</td></tr><tr><td>تکراری</td><td>این وام کپی وام دیگری است.</td><td>از پنل قابل تغییر نیست.</td></tr><tr><td>بانک دیگر نمی‌دهد</td><td>بانک این وام را متوقف کرده است.</td><td>اگر اشتباه است، کلید «بانک هنوز این وام را می‌دهد» را روشن کنید.</td></tr></tbody></table></div></div>
+  
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-catalog-list.jpg" data-caption="فهرست وام‌ها"><img loading="lazy" src="shots/a-catalog-list.jpg" alt="فهرست وام‌ها"></button><figcaption>فهرست وام‌ها</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-catalog-hidden.jpg" data-caption="وام‌هایی که پیشنهاد نمی‌شوند"><img loading="lazy" src="shots/a-catalog-hidden.jpg" alt="وام‌هایی که پیشنهاد نمی‌شوند"></button><figcaption>وام‌هایی که پیشنهاد نمی‌شوند</figcaption></figure></div>
+</section><section class="sec" id="cat-editor">
+  <h3>ویرایش یک وام</h3>
+  <p class="lead">در این صفحه همه‌ی اطلاعات یک وام را اصلاح می‌کنید. هر بار ذخیره، یک «نسخه‌ی تازه» می‌سازد و نسخه‌ی قبلی در تاریخچه می‌ماند.</p>
+  <figure class="vid vid--wide" data-take="c2-editor">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/c2-editor.jpg" src="media/c2-editor.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۳۰ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.61"><span class="t">۰:۰۰</span><span>صفحه‌ی ویرایش یک وام. بالای صفحه نام وام، بانک، شماره‌ی نسخه و وضعیت آن را می‌بینید.</span></button></li><li><button type="button" data-at="3.88"><span class="t">۰:۰۳</span><span>این وام «منتظر پلن نرخ ثابت» است: منبع برای آن بازه‌ی نرخ داده و تا پلن با نرخ مشخص تعریف نشود، به کسی پیشنهاد نمی‌شود.</span></button></li><li><button type="button" data-at="7.87"><span class="t">۰:۰۷</span><span>در بخش «پلن‌ها» با پلن‌ساز چند پلن را یک‌جا بسازید: مدت‌ها از منبع آمده‌اند، فقط نرخ ثابت را وارد کنید.</span></button></li><li><button type="button" data-at="13.88"><span class="t">۰:۱۳</span><span>شرط‌ها، قدم‌ها، نقشه‌ی راه، نکته‌ها و لینک‌ها هم همین‌جا ویرایش می‌شوند.</span></button></li><li><button type="button" data-at="20.49"><span class="t">۰:۲۰</span><span>با «ذخیره به‌عنوان نسخه‌ی تازه» تغییرها ثبت می‌شود. نسخه‌ی قبلی پاک نمی‌شود و در تاریخچه می‌ماند.</span></button></li><li><button type="button" data-at="24.33"><span class="t">۰:۲۴</span><span>حالا وام نسخه‌ی ۲ است و «قابل پیشنهاد» شده. از فهرست نسخه‌ها می‌توانید نسخه‌های قبلی را هم ببینید.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>«مشخصات»: عنوان، نوع وام، روش گرفتن وام (آنلاین، حضوری)، توضیح، حداقل و حداکثر مبلغ و نرخ.</li><li>«شرایط احراز»: آیا وام برای همه باز است یا معرفی‌نامه می‌خواهد، و معرفی‌نامه برای کدام گروه است.</li><li>«پلن‌ها»: هر پلن یک مدت بازپرداخت با یک نرخ ثابت است. وامی که پلن ندارد پیشنهاد نمی‌شود.</li><li>«ساخت چند پلن با هم»: مدت‌ها را بنویسید (مثلاً ۱۲، ۲۴، ۳۶) یا بازه و پله بدهید، یک نرخ وارد کنید و «افزودن به پلن‌ها» را بزنید. قبل از افزودن، می‌بینید چه پلن‌هایی ساخته می‌شود.</li><li>«شرط‌ها» و «قدم‌ها»: ردیف اضافه یا حذف کنید و با فلش‌ها ترتیب را عوض کنید.</li><li>«نقشه‌ی راه»، «نکته‌ها و لینک‌ها» و «امتیاز» هم در همین صفحه هستند.</li><li>در پایان «ذخیره به‌عنوان نسخه‌ی تازه» را بزنید. اگر چیزی ناقص باشد، همان‌جا کنار همان ردیف گفته می‌شود.</li><li>از فهرست «نسخه» در بالای صفحه می‌توانید نسخه‌های قبلی را ببینید. نسخه‌های قبلی فقط خواندنی‌اند.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>مبلغ‌ها را به ریال وارد می‌کنید؛ معادل تومان زیر همان خانه نوشته می‌شود.</li><li>گزارش‌هایی که قبلاً برای کاربران ساخته شده‌اند تغییر نمی‌کنند؛ همان نسخه‌ای را نشان می‌دهند که روز ساخت دیده‌اند.</li><li>اگر هم‌زمان کس دیگری همان وام را عوض کرده باشد، صفحه هشدار می‌دهد و باید نسخه‌ی تازه را باز کنید.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-editor-top.jpg" data-caption="بالای صفحه‌ی ویرایش"><img loading="lazy" src="shots/a-editor-top.jpg" alt="بالای صفحه‌ی ویرایش"></button><figcaption>بالای صفحه‌ی ویرایش</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-editor-plans.jpg" data-caption="پلن‌ساز"><img loading="lazy" src="shots/a-editor-plans.jpg" alt="پلن‌ساز"></button><figcaption>پلن‌ساز</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-editor-conditions.jpg" data-caption="شرط‌ها و قدم‌ها"><img loading="lazy" src="shots/a-editor-conditions.jpg" alt="شرط‌ها و قدم‌ها"></button><figcaption>شرط‌ها و قدم‌ها</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-editor-saved.jpg" data-caption="بعد از ذخیره: نسخه‌ی تازه"><img loading="lazy" src="shots/a-editor-saved.jpg" alt="بعد از ذخیره: نسخه‌ی تازه"></button><figcaption>بعد از ذخیره: نسخه‌ی تازه</figcaption></figure></div>
+</section><section class="sec" id="cat-mappings">
+  <h3>نگاشت عنوان شرط‌ها</h3>
+  <p class="lead">بانک‌ها یک شرط را با عبارت‌های مختلف می‌نویسند. این‌جا به هر عبارت یک «نوع» می‌دهید تا سیستم بفهمد کاربر آن شرط را دارد یا نه.</p>
+  <figure class="vid vid--wide" data-take="c3-mappings">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/c3-mappings.jpg" src="media/c3-mappings.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۱۷ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.61"><span class="t">۰:۰۰</span><span>نگاشت عنوان شرط‌ها: هر شرطی که در وام‌ها آمده این‌جا یک «نوع» می‌گیرد تا سیستم بفهمد کاربر آن شرط را دارد یا نه.</span></button></li><li><button type="button" data-at="4.28"><span class="t">۰:۰۴</span><span>عنوان‌هایی که هنوز نوع ندارند اول فهرست هستند. عدد کنار هر عنوان می‌گوید در چند وام به کار رفته است.</span></button></li><li><button type="button" data-at="8.07"><span class="t">۰:۰۸</span><span>نوع را از فهرست انتخاب کنید و «ثبت» را بزنید. همه‌ی وام‌هایی که این شرط را دارند هم‌زمان همان نوع را می‌گیرند.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>تب «نگاشت عنوان شرط‌ها» را در صفحه‌ی کاتالوگ باز کنید.</li><li>عنوان‌هایی که هنوز نوع ندارند بالای فهرست هستند. عدد کنار هر عنوان می‌گوید در چند وام آمده است.</li><li>نوع را از فهرست انتخاب کنید و «ثبت» را بزنید.</li><li>همه‌ی وام‌هایی که این شرط را دارند همان لحظه همان نوع را می‌گیرند.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>نوع یک عنوان را بعداً می‌توانید عوض کنید، ولی نمی‌توانید آن را دوباره بدون نوع کنید.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-mappings.jpg" data-caption="عنوان‌های منتظر نوع"><img loading="lazy" src="shots/a-mappings.jpg" alt="عنوان‌های منتظر نوع"></button><figcaption>عنوان‌های منتظر نوع</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-mappings-saved.jpg" data-caption="بعد از ثبت نوع"><img loading="lazy" src="shots/a-mappings-saved.jpg" alt="بعد از ثبت نوع"></button><figcaption>بعد از ثبت نوع</figcaption></figure></div>
+</section><section class="sec" id="cat-reports">
+  <h3>گزارش‌های کاربران</h3>
+  <p class="lead">وقتی کاربری در صفحه‌ی یک وام بگوید اطلاعات آن نادرست است، گزارشش به این بخش می‌آید.</p>
+  <figure class="vid vid--wide" data-take="c4-reports">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/c4-reports.jpg" src="media/c4-reports.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۲۶ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.61"><span class="t">۰:۰۰</span><span>گزارش‌های کاربران: وقتی کاربری در صفحه‌ی یک وام «اطلاعات این وام نادرست است؟» را می‌زند، گزارشش این‌جا می‌آید.</span></button></li><li><button type="button" data-at="4.26"><span class="t">۰:۰۴</span><span>در هر گزارش نوع مشکل، وام، توضیح کاربر و وضعیت رسیدگی را می‌بینید. نام و شماره‌ی کاربر نشان داده نمی‌شود.</span></button></li><li><button type="button" data-at="8.25"><span class="t">۰:۰۸</span><span>با «تغییر وضعیت» مشخص کنید گزارش بررسی شده، اصلاح شده یا رد شده، و برای همکاران یادداشت بگذارید. چیزی برای کاربر فرستاده نمی‌شود.</span></button></li><li><button type="button" data-at="20.8"><span class="t">۰:۲۰</span><span>با «باز کردن وام» مستقیم به صفحه‌ی ویرایش همان وام می‌روید تا اطلاعاتش را درست کنید.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>تب «گزارش‌های کاربران» را باز کنید. تازه‌ترین گزارش‌ها بالا هستند.</li><li>در هر گزارش: نوع مشکل، وام و بانک، توضیح کاربر و وضعیت رسیدگی. فقط شناسه‌ی کاربر نشان داده می‌شود، نه نام و شماره.</li><li>با دکمه‌های بالا بر اساس وضعیت فیلتر کنید؛ نوع مشکل و بانک هم قابل فیلتر است.</li><li>«باز کردن وام» شما را به صفحه‌ی ویرایش همان وام می‌برد تا اطلاعات را درست کنید.</li><li>«تغییر وضعیت» را بزنید، وضعیت تازه را انتخاب کنید (جدید، بررسی‌شده، اصلاح‌شده، رد) و اگر خواستید برای همکاران یادداشت بگذارید.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>یادداشت فقط برای تیم است. چیزی برای کاربر فرستاده نمی‌شود.</li><li>هر کاربر برای هر وام روزی یک گزارش می‌تواند بفرستد.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-reports.jpg" data-caption="گزارش‌های کاربران"><img loading="lazy" src="shots/a-reports.jpg" alt="گزارش‌های کاربران"></button><figcaption>گزارش‌های کاربران</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-reports-review.jpg" data-caption="تغییر وضعیت و یادداشت"><img loading="lazy" src="shots/a-reports-review.jpg" alt="تغییر وضعیت و یادداشت"></button><figcaption>تغییر وضعیت و یادداشت</figcaption></figure></div>
+</section><section class="sec" id="cat-review">
+  <h3>صف بازبینی</h3>
+  <p class="lead">اطلاعات وام‌ها قرار است به‌صورت خودکار از سایت بانک‌ها خوانده شود. هر چیزِ تازه یا تغییرکرده اول به این صف می‌آید و تا یک نفر تأییدش نکند، به هیچ کاربری نشان داده نمی‌شود.</p>
+  <figure class="vid vid--wide" data-take="c5-review">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/c5-review.jpg" src="media/c5-review.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۳۶ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.61"><span class="t">۰:۰۰</span><span>صف بازبینی: هر تغییری که به‌صورت خودکار از سایت بانک‌ها خوانده می‌شود، تا وقتی یک نفر تأییدش نکند به کاربران نشان داده نمی‌شود.</span></button></li><li><button type="button" data-at="4.66"><span class="t">۰:۰۴</span><span>سه نوع مورد داریم: «وام جدید»، «تغییرکرده» و «ناپدیدشده». خط بالای فهرست می‌گوید آخرین به‌روزرسانی داده کی بوده است.</span></button></li><li><button type="button" data-at="8.86"><span class="t">۰:۰۸</span><span>با «بازبینی» مقدار فعلی و مقدار تازه‌ی هر چیزی که عوض شده کنار هم نشان داده می‌شود.</span></button></li><li><button type="button" data-at="12.3"><span class="t">۰:۱۲</span><span>اگر مقدار تازه درست نیست، همین‌جا اصلاحش کنید. ردیف اصلاح‌شده علامت می‌خورد.</span></button></li><li><button type="button" data-at="16.1"><span class="t">۰:۱۶</span><span>با «تأیید»، بعد از یک پرسش، نسخه‌ی تازه جای نسخه‌ی فعلی را می‌گیرد و از همان لحظه در گزارش‌ها استفاده می‌شود. با «رد» نسخه‌ی فعلی می‌ماند.</span></button></li><li><button type="button" data-at="24.16"><span class="t">۰:۲۴</span><span>وام «ناپدیدشده» یعنی دیگر در سایت بانک پیدا نشده. می‌توانید آن را نگه دارید یا بازنشسته کنید؛ هیچ وامی خودکار حذف نمی‌شود.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>تب «صف بازبینی» را باز کنید. عدد روی تب، تعداد موردهای منتظر است.</li><li>خط بالای فهرست می‌گوید آخرین به‌روزرسانی موفق کی بوده است. اگر بیش از ۴۸ ساعت گذشته باشد، قرمز می‌شود.</li><li>سه نوع مورد: «وام جدید» (در کاتالوگ نبوده)، «تغییرکرده» (وامی که داریم عوض شده) و «ناپدیدشده» (دیگر در سایت بانک پیدا نشده).</li><li>روی «بازبینی» بزنید. فقط چیزهایی که فرق کرده‌اند نشان داده می‌شوند: مقدار فعلی یک طرف، مقدار تازه طرف دیگر.</li><li>اگر مقدار تازه درست نیست، همان‌جا اصلاحش کنید. ردیف اصلاح‌شده برچسب «اصلاح‌شده» می‌گیرد و با «برگرداندن اصلاح‌ها» همه به حالت اول برمی‌گردند.</li><li>«تأیید» را بزنید و در پنجره‌ی پرسش «بله، تأیید کن». نسخه‌ی تازه از همان لحظه در گزارش‌ها استفاده می‌شود.</li><li>«رد» یعنی نسخه‌ی فعلی بماند. می‌توانید دلیل را یادداشت کنید. همان تغییر دوباره به صف برنمی‌گردد، مگر این‌که باز عوض شود.</li><li>برای وام ناپدیدشده دو انتخاب دارید: «نگه داشتن» (وام می‌ماند و از صف بیرون می‌رود) یا «بازنشسته کردن» (دیگر به کسی پیشنهاد نمی‌شود).</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>هیچ وامی خودکار حذف یا بازنشسته نمی‌شود؛ همیشه یک نفر تصمیم می‌گیرد.</li><li>وام بازنشسته‌شده از کاتالوگ بیرون می‌رود، ولی گزارش‌هایی که قبلاً با آن ساخته شده‌اند همچنان باز می‌شوند.</li><li>خواندن خودکار از سایت بانک‌ها هنوز راه نیفتاده است؛ تا آن موقع این صف خالی می‌ماند و وام‌ها را دستی در صفحه‌ی ویرایش به‌روز می‌کنید.</li><li>اگر کسی هم‌زمان همان مورد را بازبینی کرده باشد، صفحه می‌گوید این مورد دیگر منتظر نیست و شما را به صف برمی‌گرداند.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-review-queue.jpg" data-caption="صف بازبینی"><img loading="lazy" src="shots/a-review-queue.jpg" alt="صف بازبینی"></button><figcaption>صف بازبینی</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-review-compare.jpg" data-caption="مقایسه‌ی مقدار فعلی و تازه"><img loading="lazy" src="shots/a-review-compare.jpg" alt="مقایسه‌ی مقدار فعلی و تازه"></button><figcaption>مقایسه‌ی مقدار فعلی و تازه</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-review-edited.jpg" data-caption="اصلاح مقدار تازه پیش از تأیید"><img loading="lazy" src="shots/a-review-edited.jpg" alt="اصلاح مقدار تازه پیش از تأیید"></button><figcaption>اصلاح مقدار تازه پیش از تأیید</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-review-confirm.jpg" data-caption="پرسش پیش از تأیید"><img loading="lazy" src="shots/a-review-confirm.jpg" alt="پرسش پیش از تأیید"></button><figcaption>پرسش پیش از تأیید</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-review-missing.jpg" data-caption="تعیین تکلیف وام ناپدیدشده"><img loading="lazy" src="shots/a-review-missing.jpg" alt="تعیین تکلیف وام ناپدیدشده"></button><figcaption>تعیین تکلیف وام ناپدیدشده</figcaption></figure></div>
+</section></div><div class="part" id="part-questions"><header class="part__head"><p class="eyebrow">بخش سوم</p><h2>مجموعه‌سؤال‌ها</h2><p>سؤال‌هایی که از کاربر پرسیده می‌شود را خودتان بسازید و منتشر کنید.</p></header><section class="sec" id="qs-list">
+  <h3>فهرست مجموعه‌سؤال‌ها</h3>
+  <p class="lead">«مجموعه‌سؤال» همان سؤال‌هایی است که در مشاوره‌ی وام از کاربر پرسیده می‌شود. می‌توانید آن‌ها را بدون کمک تیم فنی عوض کنید. مسیر: منوی «مشاوره وام» ← «مجموعه‌سؤال‌ها».</p>
+  <figure class="vid vid--wide" data-take="q1-list">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/q1-list.jpg" src="media/q1-list.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۳۶ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.63"><span class="t">۰:۰۰</span><span>صفحه‌ی «مجموعه‌سؤال‌ها». هر مجموعه، سؤال‌هایی است که در مشاوره‌ی وام از کاربر پرسیده می‌شود.</span></button></li><li><button type="button" data-at="3.9"><span class="t">۰:۰۳</span><span>هر مجموعه یک کارت دارد و زیر آن نسخه‌هایش فهرست شده: نسخه‌ی ۱، ۲، ۳ و…</span></button></li><li><button type="button" data-at="7.65"><span class="t">۰:۰۷</span><span>نسخه‌ی «منتشرشده» دیگر تغییر نمی‌کند. برچسب «آخرین نسخه‌ی منتشرشده» همان نسخه‌ای است که کاربران الان می‌بینند.</span></button></li><li><button type="button" data-at="11.62"><span class="t">۰:۱۱</span><span>نسخه‌ی «پیش‌نویس» هنوز در دست ویرایش است و کاربران آن را نمی‌بینند.</span></button></li><li><button type="button" data-at="15.38"><span class="t">۰:۱۵</span><span>جلوی هر نسخه سه کار هست: «ویرایش» یا «دیدن سؤال‌ها»، «انتشار» برای پیش‌نویس، و «کپی به مجموعه‌ی جدید».</span></button></li><li><button type="button" data-at="19.49"><span class="t">۰:۱۹</span><span>برای تغییر مجموعه‌ای که پیش‌نویس ندارد، «نسخه‌ی جدید» را بزنید. یک پیش‌نویس با همان سؤال‌ها ساخته می‌شود.</span></button></li><li><button type="button" data-at="26.68"><span class="t">۰:۲۶</span><span>با کادر جستجو می‌توانید مجموعه را با نامش پیدا کنید.</span></button></li><li><button type="button" data-at="31.26"><span class="t">۰:۳۱</span><span>دکمه‌ی «مجموعه‌ی جدید» یک مجموعه‌ی خالی برای شروع از صفر می‌سازد.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>هر مجموعه یک کارت دارد و زیر آن نسخه‌هایش (نسخه‌ی ۱، ۲، ۳ …) با تعداد سؤال و تاریخ دیده می‌شود.</li><li>هر نسخه یا «پیش‌نویس» است (در دست ویرایش؛ کاربران آن را نمی‌بینند) یا «منتشرشده» (دیگر تغییر نمی‌کند).</li><li>برچسب «آخرین نسخه‌ی منتشرشده» نشان می‌دهد کاربران الان کدام نسخه را می‌بینند.</li><li>جلوی هر نسخه: «ویرایش» برای پیش‌نویس، «دیدن سؤال‌ها» برای منتشرشده، «انتشار» و «کپی به مجموعه‌ی جدید».</li><li>برای تغییر مجموعه‌ای که پیش‌نویس ندارد «نسخه‌ی جدید» را بزنید؛ پیش‌نویسی با همان سؤال‌ها ساخته می‌شود.</li><li>با کادر جست‌وجو مجموعه را با نامش پیدا کنید. «مجموعه‌ی جدید» یک مجموعه‌ی خالی می‌سازد.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>هر مجموعه هم‌زمان فقط یک پیش‌نویس دارد.</li><li>حذف مجموعه یا نسخه وجود ندارد؛ هر گزارش برای همیشه سؤال‌هایی را که با آن‌ها ساخته شده نگه می‌دارد.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-qs-list.jpg" data-caption="فهرست مجموعه‌سؤال‌ها و نسخه‌ها"><img loading="lazy" src="shots/a-qs-list.jpg" alt="فهرست مجموعه‌سؤال‌ها و نسخه‌ها"></button><figcaption>فهرست مجموعه‌سؤال‌ها و نسخه‌ها</figcaption></figure></div>
+</section><section class="sec" id="qs-editor">
+  <h3>ویرایش سؤال‌ها و گزینه‌ها</h3>
+  <p class="lead">در صفحه‌ی ویرایش، هر سؤال یک کادر دارد و ترتیب کادرها همان ترتیب پرسیدن از کاربر است.</p>
+  <figure class="vid vid--wide" data-take="q2-editor">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/q2-editor.jpg" src="media/q2-editor.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۱:۰۹ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.62"><span class="t">۰:۰۰</span><span>این ویرایشگر یک پیش‌نویس است. هر سؤال یک کادر جدا دارد و سؤال‌ها به همین ترتیب از کاربر پرسیده می‌شوند.</span></button></li><li><button type="button" data-at="3.88"><span class="t">۰:۰۳</span><span>متن سؤال را همین‌جا عوض کنید.</span></button></li><li><button type="button" data-at="9.96"><span class="t">۰:۰۹</span><span>متن «چرا می‌پرسیم» زیر سؤال به کاربر نشان داده می‌شود تا بداند چرا این را می‌پرسیم.</span></button></li><li><button type="button" data-at="16.48"><span class="t">۰:۱۶</span><span>نوع سؤال را هم انتخاب می‌کنید: «تک‌انتخابی» یعنی فقط یک جواب، «چندانتخابی» یعنی چند جواب با هم.</span></button></li><li><button type="button" data-at="21.67"><span class="t">۰:۲۱</span><span>با «افزودن گزینه» یک جواب تازه به سؤال اضافه کنید و متنش را بنویسید.</span></button></li><li><button type="button" data-at="28.25"><span class="t">۰:۲۸</span><span>متن گزینه‌های قبلی را هم می‌توانید همین‌طور اصلاح کنید.</span></button></li><li><button type="button" data-at="33.22"><span class="t">۰:۳۳</span><span>در سؤال چندانتخابی، گزینه‌ای مثل «هیچ‌کدام» را «انحصاری» کنید تا با انتخابش بقیه‌ی گزینه‌ها برداشته شوند.</span></button></li><li><button type="button" data-at="37.39"><span class="t">۰:۳۷</span><span>«سؤال پیگیری» سؤال کوچکی است که فقط وقتی کاربر همان گزینه را انتخاب کند نشان داده می‌شود. مثل «چند ضامن؟» زیر گزینه‌ی ضامن.</span></button></li><li><button type="button" data-at="41.55"><span class="t">۰:۴۱</span><span>برای ساختنش، زیر گزینه «سؤال پیگیری برای این گزینه» را بزنید و متن سؤال و گزینه‌هایش را بنویسید.</span></button></li><li><button type="button" data-at="55.66"><span class="t">۰:۵۵</span><span>با فلش‌های بالا و پایینِ هر سؤال، جای آن را در ترتیب سؤال‌ها عوض کنید.</span></button></li><li><button type="button" data-at="60.83"><span class="t">۱:۰۰</span><span>در آخر «ذخیره‌ی پیش‌نویس» را بزنید. تا ذخیره نکنید، تغییرها ثبت نمی‌شوند.</span></button></li><li><button type="button" data-at="63.63"><span class="t">۱:۰۳</span><span>ذخیره شد. پیش‌نویس هنوز برای کاربران دیده نمی‌شود تا وقتی که منتشرش کنید.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>«متن سؤال» را مستقیم عوض کنید.</li><li>متن «چرا می‌پرسیم؟» زیر سؤال به کاربر نشان داده می‌شود؛ کوتاه و دوستانه بنویسید.</li><li>نوع سؤال را انتخاب کنید: «تک‌انتخابی» (یک جواب) یا «چندانتخابی» (چند جواب). اجباری بودن جواب را هم می‌توانید خاموش یا روشن کنید.</li><li>با «افزودن گزینه» جواب تازه بسازید. متن گزینه‌های قبلی هم قابل اصلاح است و با علامت سطل، گزینه حذف می‌شود.</li><li>در سؤال چندانتخابی، گزینه‌ای مثل «هیچ‌کدام» را «انحصاری» کنید تا با انتخابش بقیه‌ی گزینه‌ها برداشته شوند.</li><li>«سؤال پیگیری برای این گزینه» سؤالی کوچک می‌سازد که فقط با انتخاب همان گزینه دیده می‌شود، مثل «چند ضامن دارید؟».</li><li>با فلش بالا و پایین جای سؤال‌ها را عوض کنید.</li><li>در پایان حتماً «ذخیره‌ی پیش‌نویس» را بزنید. اگر چیزی ناقص باشد، همان‌جا روی سؤال یا گزینه با پیام قرمز گفته می‌شود.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>چند خانه‌ی فنی هم در هر سؤال و گزینه هست (مثل «کلید» و «جواب کدام داده را پر می‌کند»). این‌ها به موتور انتخاب وام وصل‌اند؛ اگر مطمئن نیستید، آن‌ها را دست نزنید و از تیم فنی بپرسید.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-qs-editor.jpg" data-caption="صفحه‌ی ویرایش مجموعه"><img loading="lazy" src="shots/a-qs-editor.jpg" alt="صفحه‌ی ویرایش مجموعه"></button><figcaption>صفحه‌ی ویرایش مجموعه</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-qs-question.jpg" data-caption="یک سؤال"><img loading="lazy" src="shots/a-qs-question.jpg" alt="یک سؤال"></button><figcaption>یک سؤال</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-qs-options.jpg" data-caption="گزینه‌ها و سؤال پیگیری"><img loading="lazy" src="shots/a-qs-options.jpg" alt="گزینه‌ها و سؤال پیگیری"></button><figcaption>گزینه‌ها و سؤال پیگیری</figcaption></figure></div>
+</section><section class="sec" id="qs-rules">
+  <h3>قاعده‌ی نمایش و پیش‌نمایش</h3>
+  <p class="lead">لازم نیست همه‌ی سؤال‌ها از همه پرسیده شود. با قاعده‌ی نمایش تعیین می‌کنید یک سؤال فقط برای بعضی جواب‌ها دیده شود، و با پیش‌نمایش نتیجه را همان لحظه امتحان می‌کنید.</p>
+  <figure class="vid vid--wide" data-take="q3-rules">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/q3-rules.jpg" src="media/q3-rules.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۵۷ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.62"><span class="t">۰:۰۰</span><span>بعضی سؤال‌ها فقط برای بعضی کاربران معنی دارند. مثلاً «چه کالایی می‌خواهی بخری؟» فقط برای کسی که وام را برای خرید کالا می‌خواهد.</span></button></li><li><button type="button" data-at="4.59"><span class="t">۰:۰۴</span><span>هر سؤال بخشی به نام «چه وقت نشان داده شود؟» دارد. الان نوشته «همیشه»، یعنی از همه پرسیده می‌شود.</span></button></li><li><button type="button" data-at="8.35"><span class="t">۰:۰۸</span><span>یک شرط اضافه کنید و بگویید جواب کدام سؤالِ قبلی مهم است.</span></button></li><li><button type="button" data-at="13.95"><span class="t">۰:۱۳</span><span>بعد جواب موردنظر را انتخاب کنید: «برابر است با» ← «خرید کالا».</span></button></li><li><button type="button" data-at="23.54"><span class="t">۰:۲۳</span><span>حالا این سؤال برچسب «قاعده‌ی نمایش دارد» گرفته و فقط بعد از جواب «خرید کالا» پرسیده می‌شود.</span></button></li><li><button type="button" data-at="27.52"><span class="t">۰:۲۷</span><span>برای امتحان‌کردن، بالای صفحه «پیش‌نمایش» را بزنید. سؤال‌ها مثل کاربر یکی‌یکی جلو می‌روند.</span></button></li><li><button type="button" data-at="36.16"><span class="t">۰:۳۶</span><span>با جواب «پول نقد»، شمارنده می‌گوید ۶ سؤال در راه است؛ سؤال کالا پرسیده نمی‌شود.</span></button></li><li><button type="button" data-at="41.7"><span class="t">۰:۴۱</span><span>با جواب «خرید کالا»، تعداد سؤال‌ها ۷ می‌شود و سؤال بعدی همان «چه کالایی می‌خواهی بخری؟» است.</span></button></li><li><button type="button" data-at="51.65"><span class="t">۰:۵۱</span><span>پیش‌نمایش تغییرهای ذخیره‌نشده را هم نشان می‌دهد. اگر همه‌چیز درست بود، «ذخیره‌ی پیش‌نویس» را بزنید.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>هر سؤال (به‌جز اولی) بخش «چه وقت نشان داده شود؟» دارد. «همیشه» یعنی از همه پرسیده می‌شود.</li><li>«فقط وقتی نشان بده که…» را انتخاب کنید، یک سؤالِ قبلی را برگزینید، بعد «برابر است با» و جواب مورد نظر (مثلاً «خرید کالا»).</li><li>با «شرط دیگر» می‌توانید چند شرط بگذارید و بگویید همه برقرار باشند یا دست‌کم یکی.</li><li>«پیش‌نمایش» در بالای صفحه سؤال‌ها را مثل کاربر یکی‌یکی جلو می‌برد. شمارنده‌ی «سؤال ۲ از ۶» با عوض کردن جواب تغییر می‌کند.</li><li>بعد از امتحان، «ذخیره‌ی پیش‌نویس» را بزنید.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>شرط فقط می‌تواند درباره‌ی سؤال‌های قبل‌تر باشد.</li><li>اگر سؤالی با هیچ جوابی دیده نشود، برچسب «هیچ‌وقت نشان داده نمی‌شود» می‌گیرد؛ قاعده‌اش را درست کنید.</li><li>پیش‌نمایش تغییرهای ذخیره‌نشده را هم نشان می‌دهد، ولی ظاهرش با صفحه‌ی واقعی کاربر کمی فرق دارد.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-qs-rules.jpg" data-caption="قاعده‌ی نمایش یک سؤال"><img loading="lazy" src="shots/a-qs-rules.jpg" alt="قاعده‌ی نمایش یک سؤال"></button><figcaption>قاعده‌ی نمایش یک سؤال</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-qs-preview.jpg" data-caption="پیش‌نمایش زنده"><img loading="lazy" src="shots/a-qs-preview.jpg" alt="پیش‌نمایش زنده"></button><figcaption>پیش‌نمایش زنده</figcaption></figure></div>
+</section><section class="sec" id="qs-publish">
+  <h3>انتشار و کپی</h3>
+  <p class="lead">تا پیش‌نویس منتشر نشود، کاربران آن را نمی‌بینند.</p>
+  <figure class="vid vid--wide" data-take="q4-publish">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/q4-publish.jpg" src="media/q4-publish.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۴۶ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.62"><span class="t">۰:۰۰</span><span>وقتی پیش‌نویس آماده شد، باید «منتشر» شود تا کاربران سؤال‌های تازه را ببینند.</span></button></li><li><button type="button" data-at="4.19"><span class="t">۰:۰۴</span><span>«انتشار» را بزنید. پنجره‌ای می‌پرسد مطمئن هستید یا نه، چون نسخه بعد از انتشار دیگر تغییر نمی‌کند.</span></button></li><li><button type="button" data-at="11.27"><span class="t">۰:۱۱</span><span>نسخه‌ی ۳ حالا «منتشرشده» است و برچسب «آخرین نسخه‌ی منتشرشده» گرفته. از این لحظه کاربران همین نسخه را می‌بینند.</span></button></li><li><button type="button" data-at="15.44"><span class="t">۰:۱۵</span><span>نسخه‌ی منتشرشده را فقط می‌شود دید. «دیدن سؤال‌ها» را بزنید.</span></button></li><li><button type="button" data-at="19.44"><span class="t">۰:۱۹</span><span>همه‌ی کادرها قفل هستند. برای تغییر، «نسخه‌ی جدید برای ویرایش» را بزنید.</span></button></li><li><button type="button" data-at="24.2"><span class="t">۰:۲۴</span><span>یک پیش‌نویس تازه (نسخه‌ی ۴) با همان سؤال‌ها باز شد. نسخه‌ی منتشرشده تا انتشار بعدی دست‌نخورده می‌ماند.</span></button></li><li><button type="button" data-at="31.89"><span class="t">۰:۳۱</span><span>«کپی به مجموعه‌ی جدید» از یک نسخه، مجموعه‌ای جدا می‌سازد؛ مثلاً برای امتحان‌کردن سؤال‌های متفاوت.</span></button></li><li><button type="button" data-at="34.17"><span class="t">۰:۳۴</span><span>یک نام (کلید) تازه با حروف کوچک انگلیسی، عدد و خط زیر بنویسید و «کپی کن» را بزنید.</span></button></li><li><button type="button" data-at="40.62"><span class="t">۰:۴۰</span><span>مجموعه‌ی تازه به‌صورت پیش‌نویس در فهرست آمد. آن را ویرایش و هر وقت آماده بود منتشر کنید.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>در فهرست، کنار پیش‌نویس «انتشار» را بزنید.</li><li>پنجره‌ی تأیید نام مجموعه و شماره‌ی نسخه را می‌گوید. با «منتشر کن» کاربران از همان لحظه سؤال‌های تازه را می‌بینند.</li><li>نسخه‌ی منتشرشده قفل است و با «دیدن سؤال‌ها» فقط می‌شود آن را دید.</li><li>برای تغییر، «نسخه‌ی جدید برای ویرایش» را بزنید. نسخه‌ی قبلی تا انتشار بعدی سر جایش می‌ماند.</li><li>«کپی به مجموعه‌ی جدید» از هر نسخه یک مجموعه‌ی جدا می‌سازد، مثلاً برای آزمایش سؤال‌های متفاوت.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>قبل از انتشار حتماً با پیش‌نمایش مرور کنید؛ انتشار قابل برگشت نیست (فقط می‌توانید نسخه‌ی بعدی را منتشر کنید).</li><li>نام مجموعه‌ی کپی‌شده فقط حروف کوچک انگلیسی، عدد و خط زیر (_) می‌گیرد و نباید تکراری باشد.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-qs-publish.jpg" data-caption="تأیید انتشار"><img loading="lazy" src="shots/a-qs-publish.jpg" alt="تأیید انتشار"></button><figcaption>تأیید انتشار</figcaption></figure></div>
+</section></div><div class="part" id="part-experiment"><header class="part__head"><p class="eyebrow">بخش چهارم</p><h2>آزمایش‌ها</h2><p>قیمت‌ها، پکیج‌ها و سؤال‌های مختلف را روی بخشی از بازدیدکننده‌ها امتحان کنید.</p></header><section class="sec" id="exp">
+  <h3>آزمایش مشاوره‌ی وام</h3>
+  <p class="lead">در «آزمایش‌ها» بازدیدکننده‌ها بین چند «نسخه» تقسیم می‌شوند تا معلوم شود کدام قیمت، پکیج یا مجموعه‌سؤال بهتر جواب می‌دهد. مسیر: منوی «مارکتینگ» ← «آزمایش‌ها».</p>
+  <figure class="vid vid--wide" data-take="e1-experiment">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/e1-experiment.jpg" src="media/e1-experiment.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۵۰ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.61"><span class="t">۰:۰۰</span><span>صفحه‌ی «آزمایش‌ها». در یک آزمایش، بازدیدکننده‌ها بین چند «نسخه» تقسیم می‌شوند تا ببینیم کدام بهتر می‌فروشد.</span></button></li><li><button type="button" data-at="4.07"><span class="t">۰:۰۴</span><span>هر ردیف یک آزمایش است با وضعیت، خدمت، تعداد نسخه‌ها و تعداد بازدیدکننده‌ها. آزمایش مشاوره وام نسخه ۲ را باز می‌کنیم.</span></button></li><li><button type="button" data-at="9.04"><span class="t">۰:۰۹</span><span>بالای صفحه عنوان، خدمتِ مورد آزمایش و لینک ورودی است. این لینک را در تبلیغ و پیامک می‌گذارید.</span></button></li><li><button type="button" data-at="14.43"><span class="t">۰:۱۴</span><span>هر آزمایش چند «نسخه» دارد. نسخه‌ی اول «کنترل» است، یعنی حالت فعلی که بقیه با آن مقایسه می‌شوند.</span></button></li><li><button type="button" data-at="18.46"><span class="t">۰:۱۸</span><span>هر نسخه یا «یک قیمت» دارد یا چند پکیج کنار هم («سطح‌ها»). نسخه‌ی ب سه پکیج برنزی، نقره‌ای و طلایی دارد.</span></button></li><li><button type="button" data-at="23.59"><span class="t">۰:۲۳</span><span>برای هر پکیج قیمت را می‌نویسید و تیک می‌زنید کدام بخش‌های گزارش را داشته باشد.</span></button></li><li><button type="button" data-at="28.55"><span class="t">۰:۲۸</span><span>«سقف مبلغ درخواستی» و «حداکثر تعداد وام پیشنهادی» هم برای هر پکیج جدا تعیین می‌شود. خالی یعنی بدون محدودیت.</span></button></li><li><button type="button" data-at="33.96"><span class="t">۰:۳۳</span><span>در «مجموعه‌سؤال این نسخه» انتخاب می‌کنید بازدیدکننده‌های این نسخه کدام سؤال‌ها را ببینند. فقط نسخه‌های منتشرشده در فهرست هستند.</span></button></li><li><button type="button" data-at="40.13"><span class="t">۰:۴۰</span><span>«ذخیره» را بزنید. بعد با «شروع آزمایش» اجرا می‌شود؛ از آن به بعد نسخه‌ها، سهم‌ها و قیمت‌ها قفل می‌شوند.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>هر ردیف فهرست یک آزمایش است: وضعیت، سرویس، تعداد نسخه‌ها و بازدیدکننده‌ها. با کلیک روی ردیف باز می‌شود.</li><li>بالای صفحه «لینک ورودی» است؛ همین لینک را در تبلیغ و پیامک بگذارید.</li><li>یک نسخه «کنترل» است، یعنی مبنای مقایسه. برای هر نسخه عنوان و «سهم از بازدیدکننده‌ها» را تعیین می‌کنید.</li><li>هر نسخه یا «یک قیمت» دارد یا «سطح‌ها»، یعنی چند پکیج مثل برنزی، نقره‌ای و طلایی.</li><li>برای هر پکیج: عنوان، قیمت، ویژگی‌ها، بخش‌هایی از گزارش که در این پکیج هست، سقف مبلغ درخواستی و حداکثر تعداد وام پیشنهادی.</li><li>در «مجموعه‌سؤال این نسخه» انتخاب می‌کنید بازدیدکننده‌های این نسخه کدام سؤال‌ها را ببینند.</li><li>«ذخیرهٔ تغییرات» و بعد «شروع آزمایش» را بزنید.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>فقط مجموعه‌سؤال‌های منتشرشده در فهرست انتخاب هستند؛ اول مجموعه را منتشر کنید.</li><li>بعد از شروع آزمایش، نسخه‌ها، سهم‌ها و قیمت‌ها قفل می‌شوند. قبل از شروع همه‌چیز را بازبینی کنید.</li><li>قیمت‌ها را به ریال وارد می‌کنید؛ معادل تومان زیر همان خانه نوشته می‌شود.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-exp-list.jpg" data-caption="فهرست آزمایش‌ها"><img loading="lazy" src="shots/a-exp-list.jpg" alt="فهرست آزمایش‌ها"></button><figcaption>فهرست آزمایش‌ها</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-exp-editor.jpg" data-caption="ویرایش آزمایش"><img loading="lazy" src="shots/a-exp-editor.jpg" alt="ویرایش آزمایش"></button><figcaption>ویرایش آزمایش</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-exp-question-set.jpg" data-caption="پکیج‌ها و مجموعه‌سؤال یک نسخه"><img loading="lazy" src="shots/a-exp-question-set.jpg" alt="پکیج‌ها و مجموعه‌سؤال یک نسخه"></button><figcaption>پکیج‌ها و مجموعه‌سؤال یک نسخه</figcaption></figure></div>
+</section></div><div class="part" id="part-prompts"><header class="part__head"><p class="eyebrow">بخش پنجم</p><h2>نسخه‌های پرامپت</h2><p>دستوری که هوش مصنوعی با آن متن مشاوره را می‌نویسد.</p></header><section class="sec" id="pr-list">
+  <h3>نسخه‌های پرامپت</h3>
+  <p class="lead">«پرامپت» دستوری است که به هوش مصنوعی می‌دهیم تا متن مشاوره‌ی وام را بنویسد. هر بار که این دستور عوض شود، یک نسخه‌ی تازه ساخته می‌شود. مسیر: منوی «مشاوره وام» ← «نسخه‌های پرامپت».</p>
+  <figure class="vid vid--wide" data-take="p1-prompts">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/p1-prompts.jpg" src="media/p1-prompts.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۵۳ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.64"><span class="t">۰:۰۰</span><span>صفحه‌ی «نسخه‌های پرامپت». پرامپت یعنی دستوری که به هوش مصنوعی می‌دهیم تا متن مشاوره‌ی وام را بنویسد.</span></button></li><li><button type="button" data-at="4.3"><span class="t">۰:۰۴</span><span>هر بار که این دستور عوض شود یک نسخه‌ی تازه ساخته می‌شود. نسخه‌ی «فعال» همانی است که گزارش کاربران الان با آن نوشته می‌شود.</span></button></li><li><button type="button" data-at="9.7"><span class="t">۰:۰۹</span><span>نسخه‌ی «پیش‌نویس» هنوز روی کاربران اثری ندارد. برچسب کنارش می‌گوید آزمون کیفیت (ارزیابی) را گذرانده یا نه.</span></button></li><li><button type="button" data-at="15.04"><span class="t">۰:۱۵</span><span>با دکمه‌ی بالا از روی نسخه‌ی فعال یک پیش‌نویس تازه می‌سازید. حالا پیش‌نویس نسخه‌ی ۴ را با «ویرایش» باز می‌کنیم.</span></button></li><li><button type="button" data-at="19.79"><span class="t">۰:۱۹</span><span>این متن همان دستور است. تا وقتی نسخه پیش‌نویس است می‌توانید متن و یادداشت را عوض و ذخیره کنید.</span></button></li><li><button type="button" data-at="23.63"><span class="t">۰:۲۳</span><span>در بخش «مقایسه» یک نسخه‌ی دیگر را انتخاب کنید تا ببینید چه خط‌هایی اضافه یا حذف شده است.</span></button></li><li><button type="button" data-at="30.98"><span class="t">۰:۳۰</span><span>«اجراهای ارزیابی» نتیجه‌ی آزمون این نسخه است: جدول می‌گوید هر شرط برقرار بوده یا نه، و نمره‌ی متن‌ها زیرش آمده است.</span></button></li><li><button type="button" data-at="35.23"><span class="t">۰:۳۵</span><span>چون ارزیابی «قبول» شده، دکمه‌ی «فعال کن» روشن است. آن را بزنید و تأیید کنید.</span></button></li><li><button type="button" data-at="40.21"><span class="t">۰:۴۰</span><span>نسخه‌ی ۴ فعال شد. از این لحظه گزارش‌های تازه با این نسخه نوشته می‌شوند و نسخه‌ی قبلی بایگانی می‌شود.</span></button></li><li><button type="button" data-at="47.38"><span class="t">۰:۴۷</span><span>اگر نسخه‌ی تازه خوب کار نکرد، با «برگشت به نسخه‌ی فعال قبلی» به نسخه‌ی قبل برمی‌گردید.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>نسخه‌ی «فعال» همانی است که گزارش کاربران الان با آن نوشته می‌شود. نسخه‌ی «پیش‌نویس» هنوز روی کاربران اثری ندارد.</li><li>برچسب کنار هر پیش‌نویس می‌گوید آزمون کیفیت (ارزیابی) را گذرانده یا نه.</li><li>با دکمه‌ی بالای صفحه، از روی نسخه‌ی فعال یک پیش‌نویس تازه بسازید و با «ویرایش» بازش کنید.</li><li>متن دستور و یادداشت را عوض و ذخیره کنید. فقط پیش‌نویس قابل تغییر است.</li><li>در بخش «مقایسه» یک نسخه‌ی دیگر را انتخاب کنید تا ببینید چه خط‌هایی اضافه یا حذف شده است.</li><li>«اجراهای ارزیابی» نتیجه‌ی آزمون این نسخه را نشان می‌دهد.</li><li>وقتی ارزیابی «قبول» شد، دکمه‌ی «فعال کن» روشن می‌شود. آن را بزنید و تأیید کنید. از همان لحظه گزارش‌های تازه با این نسخه نوشته می‌شوند.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>اگر نسخه‌ی تازه خوب کار نکرد، با «برگشت به نسخه‌ی فعال قبلی» به نسخه‌ی قبل برمی‌گردید.</li><li>نسخه‌ای که ارزیابی را نگذرانده باشد فعال نمی‌شود.</li><li>گزارش‌هایی که قبلاً نوشته شده‌اند عوض نمی‌شوند.</li><li>هم‌زمان فقط یک نسخه فعال است؛ با فعال شدن نسخه‌ی تازه، نسخه‌ی قبلی به «بایگانی» می‌رود.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-prompts-list.jpg" data-caption="فهرست نسخه‌ها"><img loading="lazy" src="shots/a-prompts-list.jpg" alt="فهرست نسخه‌ها"></button><figcaption>فهرست نسخه‌ها</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-prompts-version.jpg" data-caption="متن یک نسخه"><img loading="lazy" src="shots/a-prompts-version.jpg" alt="متن یک نسخه"></button><figcaption>متن یک نسخه</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-prompts-compare.jpg" data-caption="مقایسه‌ی دو نسخه"><img loading="lazy" src="shots/a-prompts-compare.jpg" alt="مقایسه‌ی دو نسخه"></button><figcaption>مقایسه‌ی دو نسخه</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-prompts-eval.jpg" data-caption="نتیجه‌ی ارزیابی"><img loading="lazy" src="shots/a-prompts-eval.jpg" alt="نتیجه‌ی ارزیابی"></button><figcaption>نتیجه‌ی ارزیابی</figcaption></figure></div>
+</section><section class="sec" id="pr-test">
+  <h3>امتحان یک نسخه پیش از فعال کردن</h3>
+  <p class="lead">قبل از فعال کردن یک پیش‌نویس، دو راه برای امتحانش دارید: «اجرای آزمایشی» برای یک نگاه سریع و «اجرای ارزیابی» که آزمون اصلی است.</p>
+  <figure class="vid vid--wide" data-take="p2-test-run">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/p2-test-run.jpg" src="media/p2-test-run.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۵۰ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.62"><span class="t">۰:۰۰</span><span>این یک پیش‌نویس تازه است. قبل از فعال‌کردن، دو راه برای امتحانش دارید: «اجرای آزمایشی» و «اجرای ارزیابی».</span></button></li><li><button type="button" data-at="4.02"><span class="t">۰:۰۴</span><span>«اجرای آزمایشی»: این نسخه را روی یک گزارش واقعیِ قبلی امتحان می‌کند و چیزی ذخیره نمی‌شود. شماره‌ی استعلام آن گزارش را وارد کنید.</span></button></li><li><button type="button" data-at="10.78"><span class="t">۰:۱۰</span><span>اطلاعات آن گزارش خوانده شد. حالا «اجرا با این نسخه» را بزنید.</span></button></li><li><button type="button" data-at="14.78"><span class="t">۰:۱۴</span><span>نتیجه: پیام سبز یعنی جواب هوش مصنوعی شکل درستی دارد. هزینه و زمان پاسخ را هم می‌بینید و متن جواب پایین‌تر آمده است.</span></button></li><li><button type="button" data-at="19.41"><span class="t">۰:۱۹</span><span>«اجرای ارزیابی» آزمون اصلی است: نسخه روی چند کاربر نمونه امتحان می‌شود. چند دقیقه طول می‌کشد و هزینه دارد، پس تأیید می‌خواهد.</span></button></li><li><button type="button" data-at="26.6"><span class="t">۰:۲۶</span><span>اجرا شروع شد. صفحه خودش هر چند ثانیه وضعیت را می‌خواند؛ با «تازه‌سازی» هم می‌توانید نتیجه را ببینید.</span></button></li><li><button type="button" data-at="32.59"><span class="t">۰:۳۲</span><span>شرط‌های خودکار برقرار است. حالا نوبت شماست: متن‌های نمونه را بخوانید و به هر کدام از ۱ تا ۵ نمره بدهید.</span></button></li><li><button type="button" data-at="42.65"><span class="t">۰:۴۲</span><span>با میانگین دست‌کم ۴ و بدون نمره‌ی زیر ۳، ارزیابی «قبول» می‌شود و دکمه‌ی «فعال کن» روشن می‌شود.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>«اجرای آزمایشی»: شماره‌ی یک استعلام قبلی را وارد کنید. نسخه روی همان گزارش امتحان می‌شود و چیزی ذخیره نمی‌شود.</li><li>«اجرا با این نسخه» را بزنید. پیام سبز یعنی جواب هوش مصنوعی شکل درستی دارد. هزینه، زمان پاسخ و متن جواب را هم می‌بینید.</li><li>«اجرای ارزیابی»: نسخه روی چند کاربر نمونه امتحان می‌شود. چند دقیقه طول می‌کشد و هزینه دارد، پس تأیید می‌خواهد.</li><li>صفحه هر چند ثانیه وضعیت را خودش می‌خواند؛ با «تازه‌سازی» هم می‌توانید نتیجه را ببینید.</li><li>وقتی شرط‌های خودکار برقرار شد، نوبت شماست: متن‌های نمونه را بخوانید و به هر کدام از ۱ تا ۵ نمره بدهید.</li><li>با میانگین دست‌کم ۴ و بدون نمره‌ی زیر ۳، ارزیابی «قبول» می‌شود و دکمه‌ی «فعال کن» روشن می‌شود.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>اجرای ارزیابی هزینه‌ی واقعی دارد؛ فقط وقتی پیش‌نویس آماده است آن را اجرا کنید.</li><li>هر دو اجرا روی متن ذخیره‌شده انجام می‌شوند؛ اول تغییرها را ذخیره کنید. اگر بعد از ارزیابی متن را عوض کردید، دوباره ارزیابی کنید.</li><li>در فیلم، اجرای ارزیابی با یک کلیک تمام می‌شود؛ در عمل چند دقیقه طول می‌کشد.</li><li>پیام زرد در اجرای آزمایشی یعنی جواب هوش مصنوعی شکل درستی ندارد؛ دلیلش زیر همان پیام فهرست می‌شود.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-prompts-test.jpg" data-caption="اجرای آزمایشی"><img loading="lazy" src="shots/a-prompts-test.jpg" alt="اجرای آزمایشی"></button><figcaption>اجرای آزمایشی</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-prompts-review.jpg" data-caption="نمره دادن به متن‌های نمونه"><img loading="lazy" src="shots/a-prompts-review.jpg" alt="نمره دادن به متن‌های نمونه"></button><figcaption>نمره دادن به متن‌های نمونه</figcaption></figure></div>
+</section></div><div class="part" id="part-ai"><header class="part__head"><p class="eyebrow">بخش ششم</p><h2>هوش مصنوعی</h2><p>شرکت‌ها و مدل‌هایی که متن مشاوره را می‌نویسند.</p></header><section class="sec" id="ai-settings">
+  <h3>سرویس‌ها و مدل‌های هوش مصنوعی</h3>
+  <p class="lead">در این صفحه تعیین می‌کنید هر کارِ هوش مصنوعی با کدام شرکت و کدام مدل انجام شود. مسیر: منوی «تنظیمات» ← «هوش مصنوعی».</p>
+  <figure class="vid vid--wide" data-take="s1-ai-settings">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/s1-ai-settings.jpg" src="media/s1-ai-settings.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۱:۰۷ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.62"><span class="t">۰:۰۰</span><span>صفحه‌ی «هوش مصنوعی» سه بخش دارد. بخش «عامل‌ها» می‌گوید هر کار هوش مصنوعی، مثل مشاوره‌ی وام، با کدام سرویس و کدام مدل انجام می‌شود.</span></button></li><li><button type="button" data-at="6.18"><span class="t">۰:۰۶</span><span>با «تنظیم» سرویس و مدل اصلی و یک «پشتیبان» را انتخاب می‌کنید؛ پشتیبان وقتی به کار می‌آید که اصلی جواب ندهد.</span></button></li><li><button type="button" data-at="13.51"><span class="t">۰:۱۳</span><span>بخش «ارائه‌دهنده‌ها»: شرکت‌هایی که هوش مصنوعی را به ما می‌دهند. رمز اتصال هر کدام هیچ‌وقت کامل نشان داده نمی‌شود؛ فقط چهار حرف آخرش را می‌بینید.</span></button></li><li><button type="button" data-at="19.34"><span class="t">۰:۱۹</span><span>با «آزمون اتصال» مطمئن می‌شوید ارتباط با آن شرکت برقرار است.</span></button></li><li><button type="button" data-at="23.55"><span class="t">۰:۲۳</span><span>برای افزودن، «ارائه‌دهنده‌ی تازه» را بزنید و نام، نشانی و رمز اتصالی را که از آن شرکت گرفته‌اید وارد کنید.</span></button></li><li><button type="button" data-at="39.73"><span class="t">۰:۳۹</span><span>ذخیره شد. رمز دیگر کامل دیده نمی‌شود. در «ویرایش» اگر جای رمز را خالی بگذارید، همان رمز قبلی می‌ماند.</span></button></li><li><button type="button" data-at="48.85"><span class="t">۰:۴۸</span><span>بخش «مدل‌ها»: مدل‌های هوش مصنوعی و قیمت هر کدام به دلار. مدلی که قیمت ندارد، هزینه‌اش در گزارش‌ها «نامعلوم» می‌ماند.</span></button></li><li><button type="button" data-at="54.66"><span class="t">۰:۵۴</span><span>با «ویرایش» قیمت ورودی و خروجی مدل را وارد و ذخیره کنید.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>بخش «عامل‌ها» می‌گوید هر کار، مثل مشاوره‌ی وام، با کدام سرویس و کدام مدل انجام می‌شود.</li><li>با «تنظیم» مدل اصلی و یک «پشتیبان» را انتخاب کنید. پشتیبان وقتی به کار می‌آید که مدل اصلی جواب ندهد.</li><li>بخش «ارائه‌دهنده‌ها» شرکت‌هایی است که هوش مصنوعی را به ما می‌دهند. با «آزمون اتصال» مطمئن می‌شوید ارتباط برقرار است.</li><li>برای افزودن، «ارائه‌دهنده‌ی تازه» را بزنید و نام، نشانی و رمز اتصالی را که از آن شرکت گرفته‌اید وارد کنید.</li><li>بخش «مدل‌ها» فهرست مدل‌ها و قیمت هر کدام است. با «ویرایش» قیمت ورودی و خروجی را وارد و ذخیره کنید.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>رمز اتصال هیچ‌وقت کامل نشان داده نمی‌شود؛ فقط چهار حرف آخرش را می‌بینید.</li><li>در «ویرایش» اگر جای رمز را خالی بگذارید، همان رمز قبلی می‌ماند.</li><li>مدلی که قیمت ندارد، هزینه‌اش در گزارش‌ها «نامعلوم» می‌ماند.</li><li>ارائه‌دهنده یا مدلی که یک عامل از آن استفاده می‌کند حذف نمی‌شود.</li><li>بعضی کادرهای این صفحه (مثل «توکن» و «wrapper») فنی هستند؛ مقدار آن‌ها را از تیم فنی بگیرید.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-ai-agents.jpg" data-caption="عامل‌ها: هر کار با کدام مدل"><img loading="lazy" src="shots/a-ai-agents.jpg" alt="عامل‌ها: هر کار با کدام مدل"></button><figcaption>عامل‌ها: هر کار با کدام مدل</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-ai-providers.jpg" data-caption="ارائه‌دهنده‌ها"><img loading="lazy" src="shots/a-ai-providers.jpg" alt="ارائه‌دهنده‌ها"></button><figcaption>ارائه‌دهنده‌ها</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-ai-provider-form.jpg" data-caption="افزودن ارائه‌دهنده"><img loading="lazy" src="shots/a-ai-provider-form.jpg" alt="افزودن ارائه‌دهنده"></button><figcaption>افزودن ارائه‌دهنده</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-ai-models.jpg" data-caption="مدل‌ها و قیمت‌ها"><img loading="lazy" src="shots/a-ai-models.jpg" alt="مدل‌ها و قیمت‌ها"></button><figcaption>مدل‌ها و قیمت‌ها</figcaption></figure></div>
+</section></div><div class="part" id="part-inquiry"><header class="part__head"><p class="eyebrow">بخش هفتم</p><h2>گزارش یک کاربر</h2><p>برای پاسخ دادن به سؤال یا شکایت مشتری.</p></header><section class="sec" id="inq">
+  <h3>دیدن گزارش یک کاربر</h3>
+  <p class="lead">اگر کاربری درباره‌ی گزارشش سؤال یا شکایتی داشت، در صفحه‌ی «استعلام‌ها» می‌بینید دقیقاً چه چیزی برای او ساخته شده است.</p>
+  <figure class="vid vid--wide" data-take="i1-inquiry-report">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/i1-inquiry-report.jpg" src="media/i1-inquiry-report.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۴۲ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.62"><span class="t">۰:۰۰</span><span>در صفحه‌ی «استعلام‌ها»، دکمه‌ی «نتیجه مشاوره» در ردیف هر مشاوره‌ی وام این پنجره را باز می‌کند: کاربر، وضعیت و جواب‌هایی که داده است.</span></button></li><li><button type="button" data-at="6.46"><span class="t">۰:۰۶</span><span>«گزارش نسخه‌ی ۲»: نتیجه، زمان ساخت، مدل هوش مصنوعی، نسخه‌ی پرامپتی که گزارش با آن نوشته شده و هزینه‌ی آن.</span></button></li><li><button type="button" data-at="13.78"><span class="t">۰:۱۳</span><span>«فراخوانی‌های مدل» نشان می‌دهد هوش مصنوعی چند بار صدا زده شده. اگر جوابی درست نبوده «رد شد» و دوباره تلاش شده است.</span></button></li><li><button type="button" data-at="18.01"><span class="t">۰:۱۸</span><span>«وام‌های نامزد» وام‌هایی است که با شرایط کاربر جور بوده‌اند؛ تعداد وام‌های کنار گذاشته‌شده هم زیرش آمده است.</span></button></li><li><button type="button" data-at="22.0"><span class="t">۰:۲۲</span><span>در «داده‌های ثبت‌شده» جزئیات بیشتر هست؛ مثلاً «متن‌های گزارش» همان متنی است که کاربر دیده. سابقه‌ی اعتباری فقط به ادمینی که اجازه‌اش را دارد نشان داده می‌شود.</span></button></li><li><button type="button" data-at="29.97"><span class="t">۰:۲۹</span><span>اگر کاربر جواب‌هایش را عوض کرده و گزارش تازه گرفته باشد، در «خرید و پاسخ‌های دوباره» می‌بینید و با «دیدن استعلام» همان‌جا بازش می‌کنید.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>در صفحه‌ی «استعلام‌ها»، دکمه‌ی «نتیجه مشاوره» در ردیف هر مشاوره‌ی وام پنجره‌ی جزئیات را باز می‌کند: کاربر، وضعیت و جواب‌هایی که داده است.</li><li>«گزارش نسخه‌ی ۲»: نتیجه، زمان ساخت، مدل هوش مصنوعی، نسخه‌ی پرامپتی که گزارش با آن نوشته شده و هزینه‌ی آن.</li><li>«فراخوانی‌های مدل» نشان می‌دهد هوش مصنوعی چند بار به کار گرفته شده و هر بار نتیجه چه بوده است.</li><li>«وام‌های نامزد» وام‌هایی است که با شرایط کاربر جور بوده‌اند؛ تعداد وام‌های کنار گذاشته‌شده هم زیر آن آمده است.</li><li>در «داده‌های ثبت‌شده»، «متن‌های گزارش» همان متنی است که کاربر دیده است.</li><li>اگر کاربر جواب‌هایش را عوض کرده و گزارش تازه گرفته باشد، در «خرید و پاسخ‌های دوباره» می‌بینید و با «دیدن استعلام» بازش می‌کنید.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>سابقه‌ی اعتباری کاربر فقط به ادمینی نشان داده می‌شود که اجازه‌ی دیدنش را دارد.</li><li>اگر ساخت گزارش ناموفق بوده باشد، دلیل آن و برگشت مبلغ به کاربر هم در همین بخش نوشته می‌شود.</li><li>فیلم فقط محتوای پنجره‌ی «نتیجه مشاوره» را نشان می‌دهد، نه جدول صفحه‌ی «استعلام‌ها» را.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-inquiry-report.jpg" data-caption="گزارش نسخه‌ی ۲ یک کاربر"><img loading="lazy" src="shots/a-inquiry-report.jpg" alt="گزارش نسخه‌ی ۲ یک کاربر"></button><figcaption>گزارش نسخه‌ی ۲ یک کاربر</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-inquiry-ai-calls.jpg" data-caption="فراخوانی‌های هوش مصنوعی"><img loading="lazy" src="shots/a-inquiry-ai-calls.jpg" alt="فراخوانی‌های هوش مصنوعی"></button><figcaption>فراخوانی‌های هوش مصنوعی</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-inquiry-data.jpg" data-caption="داده‌های ثبت‌شده"><img loading="lazy" src="shots/a-inquiry-data.jpg" alt="داده‌های ثبت‌شده"></button><figcaption>داده‌های ثبت‌شده</figcaption></figure></div>
+</section></div><div class="part" id="part-settings"><header class="part__head"><p class="eyebrow">بخش هشتم</p><h2>تنظیمات</h2><p>کلیدها و متن‌هایی که کل سرویس را کنترل می‌کنند.</p></header><section class="sec" id="settings">
+  <h3>تنظیمات مشاوره‌ی وام</h3>
+  <p class="lead">تنظیم‌های کلی مشاوره‌ی وام در صفحه‌ی «تنظیمات سراسری قسطا» هستند، در دو زبانه: «مشاوره‌ی وام» و «معنی رتبه‌های اعتباری».</p>
+  <figure class="vid vid--wide" data-take="g1-settings">
+  <div class="vid__frame">
+    <video controls preload="none" playsinline poster="media/g1-settings.jpg" src="media/g1-settings.mp4" aria-label="ویدئوی آموزشی"></video>
+    <p class="vid__sub" aria-live="off" hidden></p>
+  </div>
+  <figcaption class="vid__side">
+    <p class="vid__meta"><span class="dot"></span>ویدئو · ۰:۵۰ دقیقه · با زیرنویس</p>
+    <p class="vid__hint">روی هر خط بزنید تا ویدئو از همان‌جا پخش شود.</p>
+    <ol class="vid__lines"><li><button type="button" data-at="0.62"><span class="t">۰:۰۰</span><span>در «تنظیمات سراسری قسطا» دو زبانه برای مشاوره‌ی وام هست. زبانه‌ی «مشاوره‌ی وام» را باز کنید.</span></button></li><li><button type="button" data-at="5.5"><span class="t">۰:۰۵</span><span>کلید اول: اگر روشن باشد همه‌ی کاربران نسخه‌ی ۲ مشاوره‌ی وام را می‌بینند. اگر خاموش باشد فقط کاربرانی که شماره‌شان را در کادر زیر نوشته‌اید.</span></button></li><li><button type="button" data-at="12.89"><span class="t">۰:۱۲</span><span>کلید بعدی اجازه می‌دهد کاربر جواب‌هایش را عوض کند و گزارش تازه بگیرد؛ عدد کنارش می‌گوید چند بار.</span></button></li><li><button type="button" data-at="18.32"><span class="t">۰:۱۸</span><span>«مدت اعتبار گزارش» به روز است. «هشدار تغییر غیرعادی» درصدی است که اگر فهرست وام‌ها در یک شب بیشتر از آن عوض شود، به تیم خبر داده می‌شود.</span></button></li><li><button type="button" data-at="24.06"><span class="t">۰:۲۴</span><span>متن پیامک «گزارش آماده است» و پیامک «برگشت مبلغ» را همین‌جا می‌نویسید. شمارنده‌ی زیر هر کادر تعداد حرف‌ها را نشان می‌دهد.</span></button></li><li><button type="button" data-at="31.25"><span class="t">۰:۳۱</span><span>«خط‌های آماری صفحه‌ی فرود» جمله‌هایی است که در صفحه‌ی شروع مشاوره به کاربر نشان داده می‌شود؛ هر جمله در یک سطر.</span></button></li><li><button type="button" data-at="35.23"><span class="t">۰:۳۵</span><span>زبانه‌ی «معنی رتبه‌های اعتباری»: متنی که در گزارش کنار رتبه‌ی اعتباری کاربر (از A1 تا E3) نوشته می‌شود.</span></button></li><li><button type="button" data-at="40.86"><span class="t">۰:۴۰</span><span>تا «ذخیره تغییرات» را نزنید چیزی عوض نمی‌شود. نوار پایین صفحه می‌گوید تغییر ذخیره‌نشده دارید یا نه.</span></button></li></ol>
+  </figcaption>
+</figure>
+  <h4 class="steps-title">قدم‌به‌قدم</h4>
+  <ol class="steps"><li>کلید اول تعیین می‌کند نسخه‌ی تازه‌ی مشاوره‌ی وام برای همه‌ی کاربران باز باشد یا فقط برای کاربرانی که شناسه‌شان را در کادر زیر آن نوشته‌اید.</li><li>کلید «تغییر جواب‌ها» اجازه می‌دهد کاربر جواب‌هایش را عوض کند و گزارش تازه بگیرد؛ عدد کنارش می‌گوید چند بار.</li><li>«مدت اعتبار گزارش» به روز است. بعد از این مدت، گزارش منقضی می‌شود.</li><li>«هشدار تغییر غیرعادی» درصدی است که اگر فهرست وام‌ها در یک شب بیشتر از آن عوض شود، به تیم خبر داده می‌شود.</li><li>«مهلت وارد کردن کد تأیید» به روز است؛ اگر کاربر بعد از پرداخت تا این مدت کد تأیید گزارش اعتباری را وارد نکند، مبلغ به او برمی‌گردد.</li><li>متن پیامک «گزارش آماده است» و پیامک «برگشت مبلغ» را همین‌جا می‌نویسید. شمارنده‌ی زیر هر کادر تعداد حرف‌ها را نشان می‌دهد.</li><li>«خط‌های آماری صفحه‌ی فرود» جمله‌هایی است که در صفحه‌ی شروع مشاوره زیر عنوان می‌چرخد؛ هر جمله در یک سطر.</li><li>در زبانه‌ی «معنی رتبه‌های اعتباری» متنی را می‌نویسید که در گزارش کنار رتبه‌ی کاربر (از A1 تا E3) نشان داده می‌شود.</li><li>در پایان «ذخیره تغییرات» را بزنید. نوار پایین صفحه می‌گوید تغییر ذخیره‌نشده دارید یا نه.</li></ol>
+  
+  <aside class="notes"><h4>خوب است بدانید</h4><ul><li>تا «ذخیره تغییرات» را نزنید چیزی عوض نمی‌شود.</li><li>قیمت سرویس در زبانه‌ی دیگری است: «قیمت سرویس ها» ← «قیمت سرویس مشاوره وام (نسخه ۲)».</li><li>متن خالی ذخیره نمی‌شود؛ پیام «این متن نمی‌تواند خالی باشد» را می‌بینید.</li><li>پیش از این‌که نسخه‌ی تازه را برای همه باز کنید، یک بار کل مسیر را با یک حساب آزمایشی بروید: ورود، پرداخت، کد ملی، کد تأیید و دیدن گزارش.</li></ul></aside>
+  <div class="shots shots--wide"><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-settings.jpg" data-caption="تنظیمات مشاوره‌ی وام"><img loading="lazy" src="shots/a-settings.jpg" alt="تنظیمات مشاوره‌ی وام"></button><figcaption>تنظیمات مشاوره‌ی وام</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-settings-sms.jpg" data-caption="متن پیامک‌ها و خط‌های صفحه‌ی شروع"><img loading="lazy" src="shots/a-settings-sms.jpg" alt="متن پیامک‌ها و خط‌های صفحه‌ی شروع"></button><figcaption>متن پیامک‌ها و خط‌های صفحه‌ی شروع</figcaption></figure><figure class="shot"><button type="button" class="shot__open" data-full="shots/a-settings-grades.jpg" data-caption="معنی رتبه‌های اعتباری"><img loading="lazy" src="shots/a-settings-grades.jpg" alt="معنی رتبه‌های اعتباری"></button><figcaption>معنی رتبه‌های اعتباری</figcaption></figure></div>
+</section></div>
+      <div class="part" id="glossary">
+        <header class="part__head"><p class="eyebrow">پایان</p><h2>واژه‌نامه</h2><p>معنی ساده‌ی کلمه‌هایی که در پنل می‌بینید.</p></header>
+        <dl class="glossary"><div><dt>کاتالوگ وام‌ها</dt><dd>فهرست همه‌ی وام‌هایی که مشاوره‌ی وام از میان آن‌ها پیشنهاد می‌دهد.</dd></div><div><dt>نسخه</dt><dd>هر بار که یک وام، مجموعه‌سؤال یا پرامپت عوض می‌شود، یک نسخه‌ی تازه ساخته می‌شود و قبلی‌ها نگه داشته می‌شوند.</dd></div><div><dt>پلن</dt><dd>یک مدت بازپرداخت با یک نرخ مشخص، مثلاً ۲۴ ماهه با ۲۳ درصد.</dd></div><div><dt>قابل پیشنهاد</dt><dd>وامی که می‌تواند در گزارش کاربران بیاید.</dd></div><div><dt>پنهان</dt><dd>وامی که به دلیلی فعلاً به کسی پیشنهاد نمی‌شود.</dd></div><div><dt>پیش‌نویس</dt><dd>چیزی که در دست ویرایش است و کاربران هنوز آن را نمی‌بینند.</dd></div><div><dt>منتشرشده / فعال</dt><dd>چیزی که الان برای کاربران به کار می‌رود.</dd></div><div><dt>صف بازبینی</dt><dd>جایی که تغییرهای خودکار وام‌ها منتظر تأیید یک نفر می‌مانند.</dd></div><div><dt>بازنشسته کردن</dt><dd>بیرون بردن یک وام از کاتالوگ، بدون پاک کردن سابقه‌ی آن.</dd></div><div><dt>مجموعه‌سؤال</dt><dd>سؤال‌هایی که در مشاوره‌ی وام از کاربر پرسیده می‌شود.</dd></div><div><dt>قاعده‌ی نمایش</dt><dd>شرطی که می‌گوید یک سؤال فقط برای بعضی جواب‌ها پرسیده شود.</dd></div><div><dt>پرامپت</dt><dd>دستوری که به هوش مصنوعی می‌دهیم تا متن مشاوره را بنویسد.</dd></div><div><dt>ارزیابی</dt><dd>آزمون کیفیت یک نسخه‌ی پرامپت روی چند کاربر نمونه، پیش از فعال شدن.</dd></div><div><dt>رتبه‌ی اعتباری</dt><dd>رتبه‌ای از A تا E که سامانه‌ی رسمی اعتبارسنجی به هر فرد می‌دهد.</dd></div><div><dt>نقشه راه</dt><dd>قدم‌هایی که کاربر باید به ترتیب برای گرفتن وام انجام دهد.</dd></div><div><dt>آزمایش</dt><dd>نشان دادن چند حالت مختلف (قیمت، پکیج، سؤال) به گروه‌های مختلف بازدیدکننده برای مقایسه.</dd></div></dl>
+      </div>
+    </main>
+  </div>
+</div>
+
+<dialog class="zoom" id="zoom" aria-label="تصویر بزرگ">
+  <div class="zoom__bar"><span id="zoom-caption"></span><button type="button" id="zoom-close">بستن</button></div>
+  <div class="zoom__body"><img id="zoom-img" alt=""></div>
+</dialog>
+
+<script>
+// Subtitles: the line that belongs to the current moment is drawn over the picture and marked in the transcript.
+document.querySelectorAll(".vid").forEach((figure) => {
+  const video = figure.querySelector("video");
+  const sub = figure.querySelector(".vid__sub");
+  const lines = [...figure.querySelectorAll(".vid__lines li")];
+  const starts = lines.map((line) => Number(line.querySelector("button").dataset.at));
+  let shown = -1;
+  const show = () => {
+    let now = -1;
+    for (let i = 0; i < starts.length; i++) if (video.currentTime + 0.05 >= starts[i]) now = i;
+    if (now === shown) return;
+    shown = now;
+    lines.forEach((line, i) => line.classList.toggle("is-now", i === now));
+    sub.hidden = now < 0;
+    if (now >= 0) {
+      sub.textContent = lines[now].querySelector("span:last-child").textContent;
+      const list = figure.querySelector(".vid__lines");
+      const line = lines[now];
+      if (line.offsetTop < list.scrollTop || line.offsetTop + line.offsetHeight > list.scrollTop + list.clientHeight) list.scrollTop = line.offsetTop - 8;
+    }
+  };
+  video.addEventListener("timeupdate", show);
+  video.addEventListener("seeked", show);
+  lines.forEach((line, i) => line.querySelector("button").addEventListener("click", () => {
+    video.currentTime = starts[i] + 0.01;
+    video.play().catch(() => {});
+  }));
+  // one video at a time
+  video.addEventListener("play", () => document.querySelectorAll(".vid video").forEach((other) => other !== video && other.pause()));
+});
+
+// Screenshots open large.
+const zoom = document.getElementById("zoom");
+document.querySelectorAll(".shot__open").forEach((button) => button.addEventListener("click", () => {
+  document.getElementById("zoom-img").src = button.dataset.full;
+  document.getElementById("zoom-img").alt = button.dataset.caption;
+  document.getElementById("zoom-caption").textContent = button.dataset.caption;
+  zoom.showModal();
+}));
+document.getElementById("zoom-close").addEventListener("click", () => zoom.close());
+zoom.addEventListener("click", (event) => { if (event.target === zoom) zoom.close(); });
+
+// The table of contents marks where the reader is.
+const links = [...document.querySelectorAll(".toc a")];
+const byId = new Map(links.map((link) => [link.getAttribute("href").slice(1), link]));
+const watcher = new IntersectionObserver((entries) => entries.forEach((entry) => {
+  if (!entry.isIntersecting) return;
+  links.forEach((link) => link.classList.remove("is-here"));
+  byId.get(entry.target.id)?.classList.add("is-here");
+}), { rootMargin: "-10% 0px -75% 0px" });
+document.querySelectorAll(".sec, .part").forEach((node) => byId.has(node.id) && watcher.observe(node));
+</script>
+
+</body></html>
